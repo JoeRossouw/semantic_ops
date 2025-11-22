@@ -72,3 +72,58 @@ Use relative paths: `[Link](../tools/bpa-viewer.md)` not absolute paths.
 
 ### Images not showing
 Place images in `docs/images/` and reference: `![Alt](../images/pic.png)`
+
+---
+
+## Adding Images and Media
+
+### Folder Structure
+```
+docs/
+├── images/              # All media files
+│   ├── tools/          # Tool screenshots
+│   ├── blog/           # Blog post images
+│   └── demos/          # GIFs and videos
+```
+
+### Create Image Folders
+```powershell
+New-Item -ItemType Directory -Path "docs\images\tools", "docs\images\blog", "docs\images\demos" -Force
+```
+
+### Using Images
+
+**Basic image:**
+```markdown
+![BPA Dashboard](../images/tools/bpa-dashboard.png)
+```
+
+**Image with size:**
+```markdown
+![Screenshot](../images/tools/screenshot.png){ width="600" }
+```
+
+**Image with caption:**
+```markdown
+![Demo](../images/demos/workflow.gif)
+*Figure 1: Automated workflow demonstration*
+```
+
+**HTML5 video:**
+```markdown
+<video width="100%" controls>
+  <source src="../images/demos/demo.mp4" type="video/mp4">
+</video>
+```
+
+**YouTube embed:**
+```markdown
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+```
+
+### Best Practices
+- Use PNG for screenshots (better quality)
+- Use GIF for short demos (< 30 seconds)
+- Use MP4 for longer videos
+- Optimize images before committing (TinyPNG, etc.)
+- Use descriptive filenames: `bpa-dashboard-overview.png` not `screenshot1.png`

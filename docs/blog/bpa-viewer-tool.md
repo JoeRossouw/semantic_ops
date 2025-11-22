@@ -1,36 +1,4 @@
-## LinkedIn Post
-
-Running Best Practice Analyzer via Tabular Editor CLI is great for automation. The output format? Not so much.
-
-You get TRX files, XML test results designed for Azure DevOps, not humans trying to understand which measures violated which rules.
-
-To see what failed in your semantic model, you parse XML. To check multiple models, you open multiple files. To compare runs, you diff XML.
-
-I built a Python script that turns BPA output into an interactive dashboard:
-
-📊 Dropdown to switch between models
-✅ Pass rate stats with color-coded health
-📋 Rules grouped by category (Performance, DAX, Naming, etc.)
-🚨 Click to expand violations - see exactly which objects failed
-🔄 Toggle to view historical analyses
-🎯 Filter: All Rules / Failed Only / Passed Only
-
-Before: Parse XML manually or run CI/CD pipeline to see results
-After: Run BPA, run script, browse interactive HTML locally
-
-Output is self-contained - share with team, upload to wiki, archive for later.
-
-Turns BPA from a quality gate into a development dashboard.
-
-**Script + walkthrough:**
-[Link to blog post]
-[Link to GitHub script]
-
-#PowerBI #TabularEditor #BestPractices #DataQuality #SemanticModeling
-
----
-
-# Running Best Practice Analyzer in Your Code Editor (And Actually Understanding the Results)
+# Making Best Practice Analyzer Results Actually Readable
 
 Tabular Editor's command-line interface lets you run Best Practice Analyzer checks on your Power BI semantic models without opening the GUI. You point it at your `.SemanticModel` folder, it analyzes your model against BPA rules, and outputs results in TRX format.
 

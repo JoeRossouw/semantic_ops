@@ -1,4 +1,4 @@
-# Power BI Automation & Agentic AI
+# Power BI CI/CD, Automation & AI
 
 Welcome to **semantic_ops**—practical tools, workflows, and AI-assisted development for Power BI.
 
@@ -28,41 +28,17 @@ Planned enhancements and future features
 
 ---
 
-## Quick Start
+## What You'll Find
 
-```powershell
-# Clone the repo
-git clone https://github.com/JoeRossouw/semantic_ops.git
-cd semantic_ops
+**Practical automation** - Python scripts that solve real problems in Power BI development workflows.
 
-# Install Python dependencies
-pip install mkdocs-material
+**AI-assisted development** - Learn to build tools by describing what you need instead of grinding through code.
 
-# Run a tool
-python scripts/visualize_bpa_results.py --input ./samples
-```
+**Real examples** - Working code, actual use cases, lessons learned building automation in production.
 
----
+**Share and improve** - All tools are open source. Use them, fork them, make them better.
 
-## About This Project
-
-**semantic_ops** demonstrates how PBIP (Power BI Projects) enables:
-
-- ✅ **AI-Assisted Development** - Build tools by describing what you need
-- ✅ **Version Control** - Git workflows for semantic models and reports  
-- ✅ **Automated Quality Checks** - CI/CD pipelines with Best Practice Analyzer
-- ✅ **Code Reviews** - Meaningful diffs and pull requests
-- ✅ **Team Collaboration** - Text-based models enable real development workflows
-
-This wasn't possible with binary `.pbix` files. PBIP changes everything.
-
----
-
-## Why This Matters
-
-Power BI is moving to PBIP as the default format (January 2026). Your semantic models become text files—readable by AI, versionable in Git, automatable in CI/CD.
-
-The tools and workflows here show what's now possible when your Power BI metadata is accessible.
+This is about making Power BI development more efficient, more collaborative, and honestly, more fun. Text-based semantic models opened the door—now we're exploring what's possible.
 
 ---
 

@@ -2,6 +2,11 @@
 
 Interactive HTML visualization tool for Power BI semantic model relationships from TMDL files.
 
+[:material-download: Download Script](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py){ .md-button .md-button--primary }
+[:fontawesome-brands-github: View on GitHub](https://github.com/JoeRossouw/semantic_ops/blob/main/scripts/visualize_all_relationships.py){ .md-button }
+
+---
+
 ## Overview
 
 This tool scans for Power BI semantic models in TMDL format, parses relationship definitions, and generates an interactive HTML diagram showing table relationships, cardinalities, and filter directions.
@@ -53,13 +58,11 @@ This tool scans for Power BI semantic models in TMDL format, parses relationship
 
 ## Installation
 
-No installation required. Simply download the script:
+No installation required. Download the script using the button above, or:
 
 ```bash
-curl -O https://raw.githubusercontent.com/YourRepo/visualize_all_relationships.py
+curl -O https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py
 ```
-
-Or clone the repository containing this script.
 
 ## Usage
 

@@ -2,6 +2,9 @@
 
 Rename Power BI report page and visual folders from GUIDs to human-readable names based on their metadata.
 
+[:material-download: Download Script](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/rename_pbir_folders.py){ .md-button .md-button--primary }
+[:fontawesome-brands-github: View on GitHub](https://github.com/JoeRossouw/semantic_ops/blob/main/scripts/rename_pbir_folders.py){ .md-button }
+
 **Python 3.7+** - Cross-platform, no external dependencies required!
 
 ---
