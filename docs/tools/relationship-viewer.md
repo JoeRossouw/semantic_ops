@@ -89,13 +89,13 @@ python visualize_all_relationships.py --no-browser
 
 **Search a specific directory only:**
 ```bash
-python visualize_all_relationships.py --search-path ./specific_folder
+python visualize_all_relationships.py --search-path ./my_models
 ```
 
 **Combine options:**
 ```bash
 python visualize_all_relationships.py \
-  --search-path ./datasets \
+  --search-path ./my_models \
   --no-browser
 ```
 

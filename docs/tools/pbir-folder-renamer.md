@@ -72,7 +72,7 @@ The script will prompt you for the path to your `.Report` folder.
 
 **Windows:**
 ```bash
-python rename_pbir_folders.py "C:\path\to\MyReport.Report"
+python rename_pbir_folders.py "path/to/MyReport.Report"
 ```
 
 **macOS/Linux:**

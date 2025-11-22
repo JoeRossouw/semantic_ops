@@ -4,14 +4,14 @@ Technical posts about Power BI automation, CI/CD workflows, and agentic AI devel
 
 ## Recent Posts
 
-### [BPA Viewer Tool: Making Best Practice Analyzer Results Actually Readable](bpa-viewer-tool.md)
+### [BPA Viewer Tool: Making Best Practice Analyzer Results Actually Readable](posts/bpa-viewer-tool.md)
 How to turn XML test results into an interactive quality dashboard.
 
 **Topics**: Best Practice Analyzer, Tabular Editor CLI, Python automation, quality analysis
 
 ---
 
-### [Agentic AI & PBIP: Building Power BI Tools Through Conversation](agentic-ai-pbip.md)
+### [Agentic AI & PBIP: Building Power BI Tools Through Conversation](posts/agentic-ai-pbip.md)
 Demonstrated at Dublin Fabric User Group: how AI + text-based models enable conversational tool development.
 
 **Topics**: PBIP, agentic AI, Model Context Protocol, relationship visualization

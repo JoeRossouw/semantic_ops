@@ -80,5 +80,5 @@ python scripts/visualize_bpa_results.py --input ./bpa_results
 python scripts/visualize_all_relationships.py --search-path ./models
 
 # Rename PBIR folders
-python scripts/rename_pbir_folders.py "C:\path\to\Report.Report"
+python scripts/rename_pbir_folders.py "path/to/Report.Report"
 ```

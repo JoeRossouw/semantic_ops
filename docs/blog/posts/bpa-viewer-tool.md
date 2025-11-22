@@ -189,5 +189,5 @@ Without opening XML, without CI/CD infrastructure, without external tools.
 ---
 
 **Related:**
-- [Relationship Visualizer Tool](../tools/relationship-viewer.md)
+- [Relationship Visualizer Tool](../../tools/relationship-viewer.md)
 - Blog: [How I Built a Power BI Tool with AI](agentic-ai-pbip.md)

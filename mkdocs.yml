@@ -105,8 +105,7 @@ plugins:
           case: lower
       authors: true
       authors_file: "{blog}/.authors.yml"
-  - tags:
-      tags_file: blog/tags.md
+  - tags
 
 # Extensions
 markdown_extensions:
