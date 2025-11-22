@@ -1,0 +1,166 @@
+# Project Information
+site_name: Power BI Automation & AI
+site_description: CI/CD, automation scripts, and agentic AI for Power BI semantic models
+site_author: Joe Rossouw
+site_url: https://joerossouw.github.io/semantic_ops/
+repo_url: https://github.com/JoeRossouw/semantic_ops
+repo_name: JoeRossouw/semantic_ops
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024-2025 Joe Rossouw
+
+# Theme Configuration
+theme:
+  name: material
+  language: en
+  
+  # Color Scheme
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  # Fonts
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  # Icons
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/power-plug
+  
+  # Features
+  features:
+    # Navigation
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    
+    # Table of Contents
+    - toc.follow
+    - toc.integrate
+    
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+    
+    # Header
+    - header.autohide
+    
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    
+    # Announce
+    - announce.dismiss
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      lang: en
+
+# Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra Configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/JoeRossouw
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/joerossouw
+
+# Navigation Structure
+nav:
+  - Home: index.md
+  
+  - Tools:
+    - tools/index.md
+    - BPA Results Viewer: tools/bpa-viewer.md
+    - Relationship Visualizer: tools/relationship-viewer.md
+    - PBIR Folder Renamer: tools/pbir-folder-renamer.md
+  
+  - Blog:
+    - blog/index.md
+    - BPA Viewer Tool: blog/bpa-viewer-tool.md
+    - Agentic AI & PBIP: blog/agentic-ai-pbip.md
+  
+  - Tutorials:
+    - tutorials/index.md
+    - Building Tools with AI: tutorials/building-tools-with-ai.md
+  
+  - Guides:
+    - guides/index.md
+  
+  - Reference:
+    - reference/index.md
+  
+  - Roadmap:
+    - roadmap/index.md
+    - BPA Viewer Enhancements: roadmap/bpa-viewer-enhancements.md
