@@ -118,7 +118,7 @@ Generated HTML is self-contained (no external dependencies) with JavaScript for:
 python visualize_bpa_results.py
 ```
 
-Script scans `_local_testing/_temp/output/` for `*.trx` files, processes them all, outputs `bpa_results_viewer.html`, and opens in browser.
+Script scans recursively from current directory for `*.trx` files, processes them all, outputs `bpa_results_viewer.html`, and opens in browser.
 
 [SCREENSHOT: Terminal output showing script scanning, processing multiple TRX files, reporting rule counts and pass rates]
 

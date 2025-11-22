@@ -69,7 +69,7 @@ Contributions welcome! Open an issue or submit a pull request.
 ## 📬 Connect
 
 - **GitHub**: [@JoeRossouw](https://github.com/JoeRossouw)
-- **LinkedIn**: [Joe Rossouw](https://linkedin.com/in/joerossouw)
+- **LinkedIn**: [Joe Rossouw](https://linkedin.com/in/joe-rossouw)
 
 ---
 

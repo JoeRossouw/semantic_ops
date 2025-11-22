@@ -163,7 +163,7 @@ python visualize_bpa_results.py --input ./bpa_results --mode trend
 ### Data Requirements
 - **Filename convention**: `{ModelName}_{YYYYMMDD}_{HHMMSS}.trx` (already implemented)
 - **Minimum data points**: At least 2 TRX files per model (otherwise show "Insufficient data for trend analysis")
-- **Storage**: No database needed—all trend data embedded in HTML
+- **Storage**: No database needed, all trend data embedded in HTML
 
 ### Benefits
 - **Sprint retrospectives**: Show concrete quality improvement metrics

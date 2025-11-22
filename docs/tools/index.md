@@ -45,7 +45,7 @@ Rename Power BI report page and visual folders from GUIDs to human-readable name
 
 ## Installation
 
-All tools use Python standard library—no external dependencies required (except MkDocs for this documentation site).
+All tools use Python standard library, no external dependencies required (except MkDocs for this documentation site).
 
 ```powershell
 # Clone the repo

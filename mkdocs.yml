@@ -1,11 +1,12 @@
 # Project Information
-site_name: Power BI CI/CD, Automation & AI
+site_name: Semantic Ops - CI/CD, AI, Automation
 site_description: CI/CD, automation scripts, and agentic AI for Power BI semantic models
 site_author: Joe Rossouw
 site_url: https://joerossouw.github.io/semantic_ops/
 repo_url: https://github.com/JoeRossouw/semantic_ops
 repo_name: JoeRossouw/semantic_ops
 edit_uri: edit/main/docs/
+use_directory_urls: true
 
 # Copyright
 copyright: Copyright &copy; 2024-2025 Joe Rossouw
@@ -134,7 +135,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/JoeRossouw
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/joerossouw
+      link: https://linkedin.com/in/joe-rossouw
 
 # Navigation Structure
 nav:

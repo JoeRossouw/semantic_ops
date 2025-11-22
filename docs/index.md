@@ -1,6 +1,6 @@
 # Power BI CI/CD, Automation & AI
 
-Welcome to **semantic_ops**—practical tools, workflows, and AI-assisted development for Power BI.
+Welcome to **semantic_ops**. Practical tools, workflows, and AI-assisted development for Power BI.
 
 ## What's Here
 
@@ -36,15 +36,15 @@ Planned enhancements and future features
 
 **Real examples** - Working code, actual use cases, lessons learned building automation in production.
 
-**Share and improve** - All tools are open source. Use them, fork them, make them better.
+**Share and improve**. All tools are open source. Use them, fork them, make them better.
 
-This is about making Power BI development more efficient, more collaborative, and honestly, more fun. Text-based semantic models opened the door—now we're exploring what's possible.
+This is about making Power BI development more efficient, more collaborative, and honestly, more fun. Text-based semantic models opened the door. Now we're exploring what's possible.
 
 ---
 
 ## Connect
 
 - **GitHub**: [JoeRossouw/semantic_ops](https://github.com/JoeRossouw/semantic_ops)
-- **LinkedIn**: [Joe Rossouw](https://linkedin.com/in/joerossouw)
+- **LinkedIn**: [Joe Rossouw](https://linkedin.com/in/joe-rossouw)
 
 Have questions or built something with these tools? Open an issue or reach out!

@@ -14,7 +14,7 @@ This tool scans for Power BI semantic models in TMDL format, parses relationship
 ### Key Features
 
 **🔍 Full Repository Visibility**
-- **Automatic Discovery**: Recursively scans entire repo for all `.SemanticModel` folders—no manual configuration
+- **Automatic Discovery**: Recursively scans entire repo for all `.SemanticModel` folders, no manual configuration
 - **Multi-Model Dropdown**: Single HTML file contains all models found; switch between them instantly
 - **Zero Setup**: Just run the script and it finds everything
 
@@ -30,7 +30,7 @@ This tool scans for Power BI semantic models in TMDL format, parses relationship
   - Shows every table connected by at least one relationship
   - Great for understanding local connectivity
 - **Filter Direction Mode**: Click any table to visualize the complete filter propagation chain
-  - Follows arrows transitively—if Table A filters B, and B filters C, all three are highlighted
+  - Follows arrows transitively. If Table A filters B, and B filters C, all three are highlighted
   - Handles bidirectional relationships (many-to-many) by following both directions
   - Perfect for understanding how selections flow through your model
 - **Toggle Button**: Switch modes on the fly to analyze different aspects of model behavior
