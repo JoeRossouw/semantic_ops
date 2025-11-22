@@ -41,7 +41,11 @@ semantic_ops/
 │   └── roadmap/       # Future enhancements
 ├── scripts/           # Python automation tools
 ├── samples/           # Sample models and reports (future)
-├── assets/            # Presentations and resources
+├── assets/            # Presentations, images, and media
+│   ├── presentations/ # PDF slides and decks
+│   ├── images/        # Screenshots and diagrams
+│   ├── documents/     # Other documents
+│   └── media/         # Videos and animations
 └── mkdocs.yml         # Documentation configuration
 ```
 

@@ -1,6 +1,24 @@
+---
+date: 2024-11-22
+authors:
+  - joe
+categories:
+  - Tools
+  - Automation
+  - Best Practices
+tags:
+  - BPA
+  - Tabular Editor
+  - Python
+  - Quality Analysis
+  - CI/CD
+---
+
 # Making Best Practice Analyzer Results Actually Readable
 
 Tabular Editor's command-line interface lets you run Best Practice Analyzer checks on your Power BI semantic models without opening the GUI. You point it at your `.SemanticModel` folder, it analyzes your model against BPA rules, and outputs results in TRX format.
+
+<!-- more -->
 
 The problem? TRX files are XML test result files designed for Azure DevOps pipelines, not humans.
 
