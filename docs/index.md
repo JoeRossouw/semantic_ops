@@ -2,29 +2,22 @@
 
 Welcome to **semantic_ops**. Practical tools, workflows, and AI-assisted development for Power BI.
 
-# Power BI CI/CD, Automation & AI
-
-Welcome to **semantic_ops**. Practical tools, workflows, and AI-assisted development for Power BI.
-
 ## What's Here
 
-### Tools
+## [Tools](tools/)
 Python automation scripts for Power BI development and CI/CD workflows
 
-### Blog
+## [Blog](blog/)
 Technical posts about tools, workflows, and agentic AI for Power BI development
 
-### Tutorials
+## [Tutorials](tutorials/)
 Step-by-step guides for building automation tools with AI assistance
 
-### Guides
+## [Guides](guides/)
 How-to documentation for CI/CD, Tabular Editor CLI, and automation workflows
 
-### Reference
+## [Reference](reference/)
 Technical documentation on PBIP, TMDL, and Power BI project formats
-
-### Roadmap
-Planned enhancements and future features
 
 ---
 

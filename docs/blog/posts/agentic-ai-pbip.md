@@ -74,13 +74,12 @@ PBIP + agentic AI:
 
 You're not learning to code. You're learning to articulate problems. AI handles implementation.
 
-## Try It Yourself
+## Get the Tool
 
-The relationship viewer tool and prompts:
+**Download:** [visualize_all_relationships.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py)
 
-- **Tool**: `visualize_all_relationships.py` - Production-ready, portable script
-- **README**: Complete usage guide in [Tools section](../../tools/relationship-viewer.md)
-- **Demo Guide**: Step-by-step prompts in [Tutorials](../../tutorials/building-tools-with-ai.md)
+**Full Documentation:** [Relationship Visualizer Tool](../../tools/relationship-viewer.md)  
+**Tutorial:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step prompts)
 
 ### What Makes This Tool Interesting
 

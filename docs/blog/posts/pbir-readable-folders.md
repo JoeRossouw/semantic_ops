@@ -98,11 +98,15 @@ MyReport.Report/definition/pages/
 
 Now your git diffs tell the story.
 
-## The Script
+## Get the Script
 
-[Download rename_pbir_folders.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/rename_pbir_folders.py)
+**Download:** [rename_pbir_folders.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/rename_pbir_folders.py)
 
-**What it does:**
+Or see the [full documentation page](../../tools/pbir-folder-renamer.md) for detailed setup instructions.
+
+## How It Works
+
+**What the script does:**
 1. Scans your `.Report` folder for page directories
 2. Reads `page.json` files to extract `displayName` and `name`
 3. Renames folders to `{displayName}_{name}` format
