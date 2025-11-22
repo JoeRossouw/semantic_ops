@@ -100,7 +100,7 @@ plugins:
       categories: true
       categories_name: Categories
       categories_url_format: "category/{slug}"
-      categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
+      categories_slugify: !!python/object/apply:pymdownx.slugs.slugify  # yamllint disable-line
         kwds:
           case: lower
       authors: true
@@ -161,6 +161,7 @@ extra:
 # Navigation Structure
 nav:
   - Home: index.md
+  - Blog: blog/index.md
   
   - Tools:
     - BPA Results Viewer: tools/bpa-viewer.md
@@ -175,6 +176,3 @@ nav:
   
   - Reference:
     - reference/index.md
-  
-  - Roadmap:
-    - BPA Viewer Enhancements: roadmap/bpa-viewer-enhancements.md

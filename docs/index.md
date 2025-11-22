@@ -4,27 +4,20 @@ Welcome to **semantic_ops**. Practical tools, workflows, and AI-assisted develop
 
 ## What's Here
 
-### 🛠️ [Tools](tools/)
-Python automation scripts for Power BI development and CI/CD workflows:
+## [Tools](tools/)
+Python automation scripts for Power BI development and CI/CD workflows
 
-- **[BPA Results Viewer](tools/bpa-viewer.md)** - Interactive HTML dashboard for Best Practice Analyzer results
-- **[Relationship Visualizer](tools/relationship-viewer.md)** - Network diagram showing semantic model relationships
-- **[PBIR Folder Renamer](tools/pbir-folder-renamer.md)** - Rename PBIR folders from GUIDs to readable names
-
-### 📝 [Blog](blog/)
+## [Blog](blog/)
 Technical posts about tools, workflows, and agentic AI for Power BI development
 
-### 🎓 [Tutorials](tutorials/)
+## [Tutorials](tutorials/)
 Step-by-step guides for building automation tools with AI assistance
 
-### 📚 [Guides](guides/)
+## [Guides](guides/)
 How-to documentation for CI/CD, Tabular Editor CLI, and automation workflows
 
-### 📖 [Reference](reference/)
+## [Reference](reference/)
 Technical documentation on PBIP, TMDL, and Power BI project formats
-
-### 🗺️ [Roadmap](roadmap/)
-Planned enhancements and future features
 
 ---
 

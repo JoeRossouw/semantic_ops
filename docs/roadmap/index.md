@@ -4,8 +4,8 @@ Planned enhancements and future features for semantic_ops tools and documentatio
 
 ## Current Focus
 
-### [BPA Viewer Enhancements](bpa-viewer-enhancements.md)
-Detailed roadmap for extending the Best Practice Analyzer Results Viewer with:
+### BPA Viewer Enhancements
+Planned extensions for the Best Practice Analyzer Results Viewer:
 - **Trend analysis** - Track compliance metrics over time
 - **Side-by-side diff view** - Compare two BPA runs to identify changes
 - **Multi-model portfolio dashboard** - Organization-wide compliance overview

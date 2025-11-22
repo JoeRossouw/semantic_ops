@@ -1,5 +1,5 @@
 ---
-date: 2024-11-22
+date: 2025-11-22
 authors:
   - joe
 categories:
@@ -125,6 +125,12 @@ Generated HTML is self-contained (no external dependencies) with JavaScript for:
 - Violation list expand/collapse
 - Filter application (all/failed/passed)
 - Dynamic stats updates
+
+## Get the Script
+
+**Download:** [visualize_bpa_results.py](https://github.com/JoeRossouw/semantic_ops/blob/main/tools/visualize_bpa_results.py)
+
+Or grab it from the [full documentation page](../../tools/bpa-viewer.md) with detailed setup instructions.
 
 ## Usage
 
