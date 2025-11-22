@@ -1,80 +1,45 @@
 # semantic_ops
 
-CI/CD automation, agentic AI tools, and development workflows for the Power BI / Fabric community.
+CI/CD automation, agentic AI tools, and development workflows for Power BI semantic models.
 
-## 📖 Documentation
+**[📖 View Full Documentation →](https://joerossouw.github.io/semantic_ops/)**
 
-**[View Full Documentation →](https://joerossouw.github.io/semantic_ops/)**
+---
 
-## 🛠️ Tools
+## What's Here
 
 Python automation scripts for Power BI development:
 
-- **[BPA Results Viewer](docs/tools/bpa-viewer.md)** - Interactive dashboard for Best Practice Analyzer results
-- **[Relationship Visualizer](docs/tools/relationship-viewer.md)** - Network diagram of semantic model relationships  
-- **[PBIR Folder Renamer](docs/tools/pbir-folder-renamer.md)** - Convert GUID folders to readable names
+- **BPA Results Viewer** - Interactive HTML dashboard for Best Practice Analyzer results
+- **Relationship Visualizer** - Network diagrams of semantic model relationships
+- **PBIR Folder Renamer** - Convert GUID folders to readable names
 
-## 🚀 Quick Start
+Plus guides, tutorials, and blog posts on AI-assisted Power BI development.
 
-```powershell
-# Clone the repo
-git clone https://github.com/JoeRossouw/semantic_ops.git
-cd semantic_ops
+**[→ Browse Tools & Documentation](https://joerossouw.github.io/semantic_ops/)**
 
-# Install MkDocs (for local docs)
-pip install mkdocs-material
+---
 
-# Run a tool
-python scripts/visualize_bpa_results.py --help
-```
+## About
 
-## 📂 Repository Structure
+This repo demonstrates what becomes possible when Power BI semantic models are text-based (PBIP format):
 
-```
-semantic_ops/
-├── docs/              # MkDocs documentation
-│   ├── tools/         # Tool documentation
-│   ├── blog/          # Technical posts
-│   ├── tutorials/     # AI-assisted development guides
-│   ├── guides/        # How-to guides
-│   ├── reference/     # Technical references
-│   └── roadmap/       # Future enhancements
-├── scripts/           # Python automation tools
-├── samples/           # Sample models and reports (future)
-├── assets/            # Presentations, images, and media
-│   ├── presentations/ # PDF slides and decks
-│   ├── images/        # Screenshots and diagrams
-│   ├── documents/     # Other documents
-│   └── media/         # Videos and animations
-└── mkdocs.yml         # Documentation configuration
-```
+- Version control and meaningful diffs
+- AI-assisted tool building
+- Automated quality checks in CI/CD
+- Team collaboration on models
 
-## 🎯 What This Repo Demonstrates
+Built for the Power BI and Fabric community.
 
-**PBIP (Power BI Projects) + Agentic AI** enables:
+---
 
-- ✅ Building automation tools through conversation with AI
-- ✅ Version control for semantic models and reports
-- ✅ Automated quality checks in CI/CD pipelines
-- ✅ Meaningful code reviews with readable diffs
-- ✅ Team collaboration on Power BI development
+## Important
 
-This wasn't possible with binary `.pbix` files. Text-based models change everything.
+**Use at your own risk.** These tools modify files and generate outputs. Always use version control and test on non-production data first. See [LICENSE](LICENSE) for details.
 
-## 📝 Recent Posts
-
-- [**Agentic AI & PBIP**](docs/blog/agentic-ai-pbip.md) - Building Power BI tools through conversation (Dublin Fabric User Group demo)
-- [**BPA Viewer Tool**](docs/blog/bpa-viewer-tool.md) - Making Best Practice Analyzer results actually readable
-
-## 🤝 Contributing
-
-Contributions welcome! Open an issue or submit a pull request.
-
-## 📬 Connect
+## Connect
 
 - **GitHub**: [@JoeRossouw](https://github.com/JoeRossouw)
 - **LinkedIn**: [Joe Rossouw](https://linkedin.com/in/joe-rossouw)
 
----
-
-**License**: MIT
+MIT License - See [LICENSE](LICENSE) file

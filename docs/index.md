@@ -42,6 +42,14 @@ This is about making Power BI development more efficient, more collaborative, an
 
 ---
 
+## Important
+
+**Use at your own risk.** These tools modify files and generate outputs. Always use version control and test on non-production data first.
+
+All tools are provided under the MIT License with no warranty. See the [GitHub repository](https://github.com/JoeRossouw/semantic_ops) for full license details.
+
+---
+
 ## Connect
 
 - **GitHub**: [JoeRossouw/semantic_ops](https://github.com/JoeRossouw/semantic_ops)
