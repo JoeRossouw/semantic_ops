@@ -1,0 +1,14 @@
+relationship 5e6b9fcc-33e1-eb6a-6792-40b51bf9404b
+	fromColumn: pbi_semantic_models.Date
+	toColumn: 'Dim Date'.Date
+
+relationship 1d6fb0cd-899f-e97c-0b60-a85197d02720
+	fromColumn: pbi_calcdependency.dataset_batch_Link
+	toColumn: pbi_semantic_models.dataset_batch_Link
+
+relationship 59c8c1db-2bd7-eb60-660f-1bf6e1bed7e5
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Search.Search_Link
+	toColumn: pbi_calcdependency.Search_Link
+

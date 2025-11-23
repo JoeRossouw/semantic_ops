@@ -5,6 +5,24 @@ Interactive HTML visualization tool for Tabular Editor's Best Practice Analyzer 
 [:material-download: Download Script](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_bpa_results.py){ .md-button .md-button--primary }
 [:fontawesome-brands-github: View on GitHub](https://github.com/JoeRossouw/semantic_ops/blob/main/scripts/visualize_bpa_results.py){ .md-button }
 
+[:material-eye: **View Live Demo** →](../../samples/example_output/bpa_results_viewer.html){ .md-button .md-button--primary target="_blank" }
+
+---
+
+## Live Demo
+
+**[🔍 Open Interactive Demo](../../samples/example_output/bpa_results_viewer.html){ target="_blank" }**
+
+Try the interactive viewer with sample BPA results from multiple anonymized Power BI models:
+
+- **Switch between models** using the dropdown (shows pass rates and timestamps)
+- **Filter results** by All/Failed/Passed rules
+- **Expand categories** to see rule details and violated objects
+- **Color-coded badges** show severity levels (Error/Warning/Info)
+- **Statistics panel** displays overall compliance metrics
+
+The demo shows real BPA results (with scrubbed company data) so you can see exactly what the tool generates before running it on your own models.
+
 ---
 
 ## Overview

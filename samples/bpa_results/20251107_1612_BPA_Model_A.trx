@@ -1,0 +1,1562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="491cfdae-1115-4826-b305-6179edf06854" name="C:\Users\DemoUser\PowerBI_Projects\datasets\Model_A\Model_A.SemanticModel\definition" runUser="COMPANY" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-11-07T16:12:08.7390207+00:00" queuing="2025-11-07T16:12:08.7390207+00:00" start="2025-11-07T16:12:12.7146494+00:00" finish="2025-11-07T16:12:17.2658234+00:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="55" executed="55" passed="43" failed="12" inconclusive="0" notExecuted="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="[Error Prevention] Expression-reliant objects must have an expression" id="2">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Calculated columns, calculation items and measures must have an expression. Without an expression, these objects will not show any values.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>EXPRESSION_RELIANT_OBJECTS_MUST_HAVE_AN_EXPRESSION</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Avoid using '1-(x/y)' syntax" id="3">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Instead of using the '1-(x/y)' or '1+(x/y)' syntax to achieve a percentage calculation, use the basic DAX functions (as shown below). Using the improved syntax will generally improve the performance. The '1+/-...' syntax always returns a value whereas the solution without the '1+/-...' does not (as the value may be 'blank'). Therefore the '1+/-...' syntax may return more rows/columns which may result in a slower query speed.
+
+Let's clarify with an example:
+
+Avoid this: 1 - SUM ( 'Sales'[CostAmount] ) / SUM( 'Sales'[SalesAmount] )
+Better: DIVIDE ( SUM ( 'Sales'[SalesAmount] ) - SUM ( 'Sales'[CostAmount] ), SUM ( 'Sales'[SalesAmount] ) )
+Best: VAR x = SUM ( 'Sales'[SalesAmount] ) RETURN DIVIDE ( x - SUM ( 'Sales'[CostAmount] ), x )</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_USING_1_MINUS_X_DIV_Y_SYNTAX_MEASURE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Avoid using '1-(x/y)' syntax" id="4">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Instead of using the '1-(x/y)' or '1+(x/y)' syntax to achieve a percentage calculation, use the basic DAX functions (as shown below). Using the improved syntax will generally improve the performance. The '1+/-...' syntax always returns a value whereas the solution without the '1+/-...' does not (as the value may be 'blank'). Therefore the '1+/-...' syntax may return more rows/columns which may result in a slower query speed.
+
+Let's clarify with an example:
+
+Avoid this: 1 - SUM ( 'Sales'[CostAmount] ) / SUM( 'Sales'[SalesAmount] )
+Better: DIVIDE ( SUM ( 'Sales'[SalesAmount] ) - SUM ( 'Sales'[CostAmount] ), SUM ( 'Sales'[SalesAmount] ) )
+Best: VAR x = SUM ( 'Sales'[SalesAmount] ) RETURN DIVIDE ( x - SUM ( 'Sales'[CostAmount] ), x )</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_USING_1_MINUS_X_DIV_Y_SYNTAX_CALC_COLUMN</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Avoid using the IFERROR function" id="5">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Avoid using the IFERROR function as it may cause performance degradation. If you are concerned about a divide-by-zero error, use the DIVIDE function as it naturally resolves such errors as blank (or you can customize what should be shown in case of such an error).
+Reference: https://www.elegantbi.com/post/top10bestpractices</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_USING_THE_IFERROR_FUNCTION</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Column references should be fully qualified" id="6">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Using fully qualified column references makes it easier to distinguish between column and measure references, and also helps avoid certain errors. When referencing a column in DAX, first specify the table name, then specify the column name in square brackets.
+Reference: https://www.elegantbi.com/post/top10bestpractices</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>DAX_COLUMNS_FULLY_QUALIFIED</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Filter column values with proper syntax" id="7">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Instead of using this pattern FILTER('Table','Table'[Column]="Value") for the filter parameters of a CALCULATE or CALCULATETABLE function, use one of the options below. As far as whether to use the KEEPFILTERS function, see the second reference link below.
+
+Option 1: KEEPFILTERS('Table'[Column]="Value")
+Option 2: 'Table'[Column]="Value"
+
+Reference: https://docs.microsoft.com/power-bi/guidance/dax-avoid-avoid-filter-as-filter-argument
+Reference: https://www.sqlbi.com/articles/using-keepfilters-in-dax/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>FILTER_COLUMN_VALUES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Inactive relationships that are never activated" id="8">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Inactive relationships are activated using the USERELATIONSHIP function. If an inactive relationship is not referenced in any measure via this function, the relationship will not be used. It should be determined whether the relationship is not necessary or to activate the relationship via this method.
+
+Reference: https://docs.microsoft.com/power-bi/guidance/relationships-active-inactive
+Reference: https://dax.guide/userelationship/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>INACTIVE_RELATIONSHIPS_THAT_ARE_NEVER_ACTIVATED</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Measures should not be direct references of other measures" id="9">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>This rule identifies measures which are simply a reference to another measure. As an example, consider a model with two measures: [MeasureA] and [MeasureB]. This rule would be triggered for MeasureB if MeasureB's DAX was MeasureB:=[MeasureA]. Such duplicative measures should be removed.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MEASURES_SHOULD_NOT_BE_DIRECT_REFERENCES_OF_OTHER_MEASURES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] No two measures should have the same definition" id="10">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Two measures with different names and defined by the same DAX expression should be avoided to reduce redundancy.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_DUPLICATE_MEASURES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] The EVALUATEANDLOG function should not be used in production models" id="11">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>The EVALUATEANDLOG function is meant to be used only in development/test environments and should not be used in production models.
+
+Reference: https://pbidax.wordpress.com/2022/08/16/introduce-the-dax-evaluateandlog-function/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>EVALUATEANDLOG_SHOULD_NOT_BE_USED_IN_PRODUCTION_MODELS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Use the DIVIDE function for division" id="12">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Use the DIVIDE  function instead of using "/". The DIVIDE function resolves divide-by-zero cases. As such, it is recommended to use to avoid errors.
+
+Reference: https://docs.microsoft.com/power-bi/guidance/dax-divide-function-operator</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>USE_THE_DIVIDE_FUNCTION_FOR_DIVISION</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[DAX Expressions] Use the TREATAS function instead of INTERSECT for virtual relationships" id="13">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>The TREATAS function is more efficient and provides better performance than the INTERSECT function when used in virutal relationships.
+Reference:  https://www.sqlbi.com/articles/propagate-filters-using-treatas-in-dax/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>DAX Expressions</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>USE_THE_TREATAS_FUNCTION_INSTEAD_OF_INTERSECT</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] Avoid invalid characters in descriptions" id="14">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>This rule identifies if a description for a given object in your model (i.e. table/column/measure) which contains an invalid character. Invalid characters will cause an error when deploying the model (and failure to deploy). This rule has a fix expression which converts the invalid character into a space, resolving the issue.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_INVALID_DESCRIPTION_CHARACTERS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] Avoid invalid characters in names" id="15">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>This rule identifies if a name for a given object in your model (i.e. table/column/measure) which contains an invalid character. Invalid characters will cause an error when deploying the model (and failure to deploy). This rule has a fix expression which converts the invalid character into a space, resolving the issue.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_INVALID_NAME_CHARACTERS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] Avoid structured data sources with provider partitions" id="16">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Power BI does not support provider (a.k.a. 'legacy') partitions which reference structured data sources. Partitions which reference structured data sources must use the M-language. Otherwise, 'provider' partitions must reference a 'provider' data source. This can be resolved by converting the structured data source into a provider data source (see 2nd reference link below).
+
+Reference: https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools#data-source-declaration
+Reference: https://www.elegantbi.com/post/convertdatasources</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_STRUCTURED_DATA_SOURCES_WITH_PROVIDER_PARTITIONS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] Data columns must have a source column" id="17">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Data columns must have a source column. A data column without a source column will cause an error when processing the model.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>DATA_COLUMNS_MUST_HAVE_A_SOURCE_COLUMN</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] Relationship columns should be of the same data type" id="18">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Columns used in a relationship should be of the same data type. Ideally, they will be of integer data type (see the related rule '[Formatting] Relationship columns should be of integer data type'). Having columns within a relationship which are of different data types may lead to various issues.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>RELATIONSHIP_COLUMNS_SAME_DATA_TYPE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] Set IsAvailableInMdx to true on necessary columns" id="19">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>In order to avoid errors, ensure that attribute hierarchies are enabled if a column is used for sorting another column, used in a hierarchy, used in variations, or is sorted by another column.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>SET_ISAVAILABLEINMDX_TO_TRUE_ON_NECESSARY_COLUMNS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Hide fact table columns" id="20">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>It is a best practice to hide fact table columns that are used for aggregation in measures.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>HIDE_FACT_TABLE_COLUMNS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Hide foreign keys" id="21">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Foreign keys should always be hidden.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>HIDE_FOREIGN_KEYS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Objects should not start or end with a space" id="22">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Objects should not start or end with a space</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>OBJECTS_SHOULD_NOT_START_OR_END_WITH_A_SPACE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Percentage measures should be formatted with thousands separators and 1 decimal" id="23">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Measures that are percentages (either by name containing PERCENTAGE, PERCENT, PCT, % or by having % in format string) should be formatted with thousands separators and exactly 1 decimal place for consistency and readability.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>PERCENTAGE_FORMATTING</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Provide format string for &quot;Date&quot; columns" id="24">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Date columns should be formatted appropriately. Pure date columns should use "dd/mm/yyyy" format, while datetime columns (with time components) should use "dd/mm/yyyy hh:mm:ss" or similar time-inclusive formats.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>DATECOLUMN_FORMATSTRING</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Whole numbers should be formatted with thousands separators and no decimals" id="25">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Measures representing whole numbers should use the format '#,0' (thousands separators with no decimals) for consistency and readability. This excludes currency, percentage, price measures, date measures, and ratio/average measures which have their own specific formatting rules.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>INTEGER_FORMATTING</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Remove data sources not referenced by any partitions" id="26">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Data sources which are not referenced by any partitions may be removed.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>REMOVE_DATA_SOURCES_NOT_REFERENCED_BY_ANY_PARTITIONS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] First letter of objects must be capitalized" id="27">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>First letters of objects must be capitalized</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>FIRST_LETTER_OF_OBJECTS_MUST_BE_CAPITALIZED</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Object names must not contain special characters" id="28">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Tabs, line breaks, etc.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>SPECIAL_CHARS_IN_OBJECT_NAMES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Trim object names" id="29">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Unintentionally leaving a trailing space in an object name is a common occurrence when copying/duplicating objects in Tabular Editor.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>TRIM_OBJECT_NAMES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Avoid excessive bi-directional or many-to-many relationships" id="30">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Limit use of bi-directional and many-to-many relationships (excluding one-to-one relationships which often require bi-directional filtering by design). This rule flags the model if more than 30% of relationships are bi-directional or many-to-many.
+Reference: https://www.sqlbi.com/articles/bidirectional-relationships-and-ambiguity-in-dax/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_EXCESSIVE_BI-DIRECTIONAL_OR_MANY-TO-MANY_RELATIONSHIPS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Date/calendar tables should be marked as a date table" id="31">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>This rule looks for tables that contain the words 'date' or 'calendar' that should likely be marked as a date table, but only if the model doesn't already have at least one properly marked date table.
+Reference: https://docs.microsoft.com/power-bi/transform-model/desktop-date-tables</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>DATE_CALENDAR_TABLES_SHOULD_BE_MARKED_AS_A_DATE_TABLE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Many-to-many relationships should be single-direction" id="32">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Many to many bi directional relationships are the worst sin you can commit in a model. Reference: https://www.sqlbi.com/articles/bidirectional-relationships-and-ambiguity-in-dax/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MANY_TO_MANY_RELATIONSHIPS_SHOULD_BE_SINGLE_DIRECTION</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Avoid one-to-one relationships" id="33">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>One-to-one relationships should generally be avoided as they often indicate a design issue where tables could be merged or the relationship is unnecessary. Consider consolidating the tables into a single table or reviewing the data model design. If a one-to-one relationship is truly necessary, ensure it's properly documented and justified.
+Reference: https://docs.microsoft.com/power-bi/guidance/relationships-one-to-one</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_ONE_TO_ONE_RELATIONSHIPS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Numeric columns missing a format string" id="34">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Numeric columns (Int64, Decimal, Double) should have a FormatString defined for clarity in reports. This rule flags visible numeric columns that do not have a format string.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>NUMERIC_COLUMNS_WITHOUT_FORMATSTRING</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Do not use floating point data types" id="35">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>The "Double" floating point data type should be avoided, as it can result in unpredictable roundoff errors and decreased performance in certain scenarios. Use "Int64" or "Decimal" where appropriate (but note that "Decimal" is limited to 4 digits after the decimal sign).</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_FLOATING_POINT_DATA_TYPES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Minimize Power Query transformations" id="36">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Minimize Power Query transformations in order to improve model processing performance. It is a best practice to offload these transformations to the data warehouse if possible. Also, please check whether query folding is occurring within your model. Please reference the article below for more information on query folding. Note: Table.AddColumn and Table.Sort are excluded as they are commonly needed transformations.
+Reference: https://docs.microsoft.com/power-query/power-query-folding</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MINIMIZE_POWER_QUERY_TRANSFORMATIONS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Avoid using native queries" id="37">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Native queries using Value.NativeQuery can bypass query folding optimizations and may lead to performance issues. Consider restructuring the query to use standard Power Query functions when possible, or ensure the native query is optimized and necessary for the specific use case. Native queries can also make the model less portable and harder to maintain.
+Reference: https://docs.microsoft.com/power-query/native-database-query</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_NATIVE_QUERY_USAGE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Avoid merge operations in Power Query" id="38">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Merge operations in Power Query can be resource-intensive and may prevent query folding, leading to slower data refresh times. Consider performing joins at the data source level (SQL) when possible, or ensure that merge operations are necessary and optimized. Merge operations should be used judiciously and only when other alternatives are not viable.
+Reference: https://docs.microsoft.com/power-query/merge-queries-overview</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>AVOID_MERGE_OPERATIONS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Model should have a date table" id="39">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Generally speaking, models should generally have a date table. Models that do not have a date table generally are not taking advantage of features such as time intelligence or may not have a properly structured architecture.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MODEL_SHOULD_HAVE_A_DATE_TABLE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Remove auto-date table" id="40">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Avoid using auto-date tables. Make sure to turn off auto-date table in the settings in Power BI Desktop. This will save memory resources. 
+Reference: https://www.youtube.com/watch?v=xu3uDEHtCrg</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>REMOVE_AUTO-DATE_TABLE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Set IsAvailableInMdx to false on non-attribute columns" id="41">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>To speed up processing time and conserve memory after processing, attribute hierarchies should not be built for columns that are never used for slicing by MDX clients. In other words, all hidden columns that are not used as a Sort By Column or referenced in user hierarchies should have their IsAvailableInMdx property set to false.
+Reference: https://blog.crossjoin.co.uk/2018/07/02/isavailableinmdx-ssas-tabular/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>ISAVAILABLEINMDX_FALSE_NONATTRIBUTE_COLUMNS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Performance] Split date and time" id="42">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>This rule finds datetime columns that have values not at midnight. To maximize performance, the time element should be split from date element (or the time component should be rounded to midnight as this will reduce column cardinality).
+Reference: https://www.sqlbi.com/articles/separate-date-and-time-in-powerpivot-and-bism-tabular/</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Performance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>SPLIT_DATE_AND_TIME</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Add calculated column descriptions" id="43">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Flags the model when more than 20percent of calculated columns have empty descriptions.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>CALC_COLUMNS_WITH_NO_DESCRIPTIONS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Add measure descriptions" id="44">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Flags the model when more than 20 percent of measures have empty descriptions.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MEASURES_WITH_NO_DESCRIPTIONS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Visible tables with no description" id="45">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Add descriptions to tables. These descriptions are shown on hover within the Field List in Power BI Desktop.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>TABLES_WITH_NO_DESCRIPTION</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Remove data platform system columns" id="46">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Data platform system columns (__ModifiedTimestamp, __InsertedTimestamp, __DeletedFlag, __AttrHash) should be removed from the model as they are not needed for reporting and consume unnecessary memory.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>REMOVE_DATA_PLATFORM_SYSTEM_COLUMNS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Remove unused link fields" id="47">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Data system link fields (columns ending with '_Link') that are not used in relationships should be removed from the model as they consume unnecessary memory and are not needed for reporting.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>REMOVE_UNUSED_LINK_FIELDS</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Provide format string for &quot;Month&quot; columns" id="48">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Columns of type "DateTime" that have "Month" in their names should be formatted as "MMMM yyyy". Exception: columns with names containing 'End of Month' or 'Start of Month' are excluded.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Formatting</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MONTHCOLUMN_FORMATSTRING</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Add CICD_TagName parameter" id="49">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Flags the model when the mandatory shared expression (Power Query parameter) 'CICD_TagName' is not present.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MISSING_CICD_TAGNAME_PARAMETER</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Hide access and security tables" id="50">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Tables containing 'Access' or 'Security' in their names should be hidden from end users as they typically contain sensitive security-related data that should not be exposed in reports.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>HIDE_ACCESS_SECURITY_TABLES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Dimension tables should have 'Dim' prefix" id="51">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Flags any visible table that sits on the ONE side of at least one relationship, never on the MANY side of any relationship, and is not an access or security table, when the name does not start with 'Dim'.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>DIMENSION_TABLES_NAMING_CONVENTION</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Measures must live in a measure table" id="52">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>All measures should reside in tables whose names start with a '.' or '_' prefix. This keeps the field list tidy and makes the measure table easy to locate. Calculated tables are excluded from this rule.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>MEASURES_IN_MEASURE_TABLE</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Maintenance] Display folders required when table has many measures" id="53">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>If a table contains more than ten visible measures, every visible measure in that table must be assigned to a DisplayFolder to keep the field list organised.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Maintenance</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>DISPLAY_FOLDER_MISSING_WHEN_MANY_MEASURES</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] RangeStart and RangeEnd in M, EnableRefreshPolicy is false" id="54">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>TE wrapper exposes EnableRefreshPolicy on the table. If it is false while M uses Range parameters, policy is likely missing.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>3</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>INCREMENTAL_REFRESH_POLICY_MISSING</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Error Prevention] M must use valid RangeStart and RangeEnd operators" id="55">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Flags tables where M uses Range parameters but the operators are wrong. Valid patterns are: 1) "&gt;= RangeStart" and "&lt; RangeEnd" OR 2) "&gt; RangeStart" and "&lt;= RangeEnd". Using both inclusive operators ("&gt;=" and "&lt;=") will duplicate rows at partition boundaries. Both operators must be present.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>3</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Error Prevention</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>INCREMENTAL_REFRESH_RANGE_OPERATORS_INCORRECT</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+    <UnitTest name="[Formatting] Date-related fields should not be stored as Text" id="56">
+      <Properties>
+        <Property>
+          <Key>Description</Key>
+          <Value>Identifies columns with 'Date' in their names that are stored as String type instead of DateTime. These should typically be converted to proper DateTime data type for better performance, time intelligence functions, and sorting. Excludes Integer, Decimal, and Boolean data types.</Value>
+        </Property>
+        <Property>
+          <Key>Severity</Key>
+          <Value>2</Value>
+        </Property>
+        <Property>
+          <Key>Category</Key>
+          <Value>Data Types</Value>
+        </Property>
+        <Property>
+          <Key>RuleID</Key>
+          <Value>DATE_FIELDS_STORED_AS_TEXT</Value>
+        </Property>
+      </Properties>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Best Practice Analysis" id="1" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2" executionId="1cf0b311-9d1d-4bf2-a020-d4a37c74e324" testListId="1" />
+    <TestEntry testId="3" executionId="d37e6ddd-2541-4308-9a46-03e9365dae0b" testListId="1" />
+    <TestEntry testId="4" executionId="4a6e724e-077d-4133-885a-017311f4e676" testListId="1" />
+    <TestEntry testId="5" executionId="da68326b-bdd7-4e95-be2f-69c6486be710" testListId="1" />
+    <TestEntry testId="6" executionId="d117f6d0-7fdd-46ad-8aef-2d66c1a2d9b0" testListId="1" />
+    <TestEntry testId="7" executionId="2303c334-dc4b-43af-8200-a21a1871e112" testListId="1" />
+    <TestEntry testId="8" executionId="7774d422-a38b-4f49-b50b-ee87884a8e62" testListId="1" />
+    <TestEntry testId="9" executionId="f79e03d6-0d03-4055-acf7-cbc6b9c0a70c" testListId="1" />
+    <TestEntry testId="10" executionId="9271c998-8df0-4770-87a2-bef8c07c866c" testListId="1" />
+    <TestEntry testId="11" executionId="9cb3376e-ef3e-4a1a-8dd1-a8dacf07c475" testListId="1" />
+    <TestEntry testId="12" executionId="03511402-b6ed-4f46-a707-1e98b7cc3532" testListId="1" />
+    <TestEntry testId="13" executionId="af77db65-a89c-4fb2-9ddc-ee6d7dfd7787" testListId="1" />
+    <TestEntry testId="14" executionId="82af7faf-b6d7-4034-ba93-c7ad07a8fb94" testListId="1" />
+    <TestEntry testId="15" executionId="c410a639-0e47-4a5c-a9cd-16c79a80d4b2" testListId="1" />
+    <TestEntry testId="16" executionId="4f0dda88-11c7-41b5-8926-2edb39adb3ec" testListId="1" />
+    <TestEntry testId="17" executionId="6a5f1ace-fd1b-43e5-bff9-902dae87d5dd" testListId="1" />
+    <TestEntry testId="18" executionId="9d9f7170-9dcf-4c7b-bf6b-1be65649c83a" testListId="1" />
+    <TestEntry testId="19" executionId="a3389cb4-2cf8-47dd-95b3-00aefd818d34" testListId="1" />
+    <TestEntry testId="20" executionId="656deaee-aa54-4593-94b2-a953eac029df" testListId="1" />
+    <TestEntry testId="21" executionId="d945e314-05fe-4428-97eb-af1c5607c363" testListId="1" />
+    <TestEntry testId="22" executionId="4b98d149-d791-4ed5-916f-9091dc3ed9dd" testListId="1" />
+    <TestEntry testId="23" executionId="2ad93c19-49a0-4835-a4c7-30da2db8fba8" testListId="1" />
+    <TestEntry testId="24" executionId="63f7280c-9c56-41ed-bb49-b097419a3ca8" testListId="1" />
+    <TestEntry testId="25" executionId="341dbcd0-734f-459b-84cc-0167795c2c98" testListId="1" />
+    <TestEntry testId="26" executionId="9dba51ca-6f98-43a1-bfa0-03953c2618d9" testListId="1" />
+    <TestEntry testId="27" executionId="a0338730-d760-440e-baaf-bbf2fb29e8d0" testListId="1" />
+    <TestEntry testId="28" executionId="1e62e663-224c-4d3e-80b8-53574d3405c1" testListId="1" />
+    <TestEntry testId="29" executionId="fd3af2a8-af3a-43f9-b270-5e54caea902e" testListId="1" />
+    <TestEntry testId="30" executionId="7fc74163-f197-4bfb-89dd-8eeafe14acce" testListId="1" />
+    <TestEntry testId="31" executionId="25750d51-eceb-452a-9b6d-59ef502ca3e9" testListId="1" />
+    <TestEntry testId="32" executionId="34909d82-7759-45cc-9628-723b4b7245f6" testListId="1" />
+    <TestEntry testId="33" executionId="2a8bc374-a7d4-4d15-bc18-37b4443f566a" testListId="1" />
+    <TestEntry testId="34" executionId="19d23591-4925-48a9-abd3-bdbb6c76312c" testListId="1" />
+    <TestEntry testId="35" executionId="7808b833-645f-431a-aeb7-1b21735592ff" testListId="1" />
+    <TestEntry testId="36" executionId="dc749a36-97bc-4f30-828d-46c45ae0e7bb" testListId="1" />
+    <TestEntry testId="37" executionId="37668c28-3c1f-4914-81f8-6c067b907d81" testListId="1" />
+    <TestEntry testId="38" executionId="c9e4a51b-3958-42a3-bee2-f48d5115cfa0" testListId="1" />
+    <TestEntry testId="39" executionId="989c514f-e1ee-491f-b225-3264fcdb81de" testListId="1" />
+    <TestEntry testId="40" executionId="a82359b7-c8d2-4a05-b558-38f0eba5829b" testListId="1" />
+    <TestEntry testId="41" executionId="3a97b075-fabd-4fd5-8ba9-2da767fce705" testListId="1" />
+    <TestEntry testId="42" executionId="c47f7909-e227-4eb2-ae06-5da6ad67a64f" testListId="1" />
+    <TestEntry testId="43" executionId="40ddece6-7a70-4843-a31c-641cc348e438" testListId="1" />
+    <TestEntry testId="44" executionId="6f8ef1dd-aebc-4184-82f3-654f98dea555" testListId="1" />
+    <TestEntry testId="45" executionId="1f7b13d5-c3e7-4b5c-9299-ea84f71ca275" testListId="1" />
+    <TestEntry testId="46" executionId="52c8f08d-7e58-4b89-ba36-f665bf796437" testListId="1" />
+    <TestEntry testId="47" executionId="f89074c4-5601-4c5e-9d83-ee6d909b7f20" testListId="1" />
+    <TestEntry testId="48" executionId="98a24b5a-d1b6-4235-8009-1af9463666fe" testListId="1" />
+    <TestEntry testId="49" executionId="8d0a017e-a345-47e3-b54a-5ecaea9c231c" testListId="1" />
+    <TestEntry testId="50" executionId="f3bcd0ef-747f-46b3-ac6e-9003d2395c2d" testListId="1" />
+    <TestEntry testId="51" executionId="cffe5f64-884f-4be2-8521-89bb09b74c3b" testListId="1" />
+    <TestEntry testId="52" executionId="39117856-a0d2-4412-a744-3480c2dc41f9" testListId="1" />
+    <TestEntry testId="53" executionId="02319005-5db7-4548-bbde-49c8969d648f" testListId="1" />
+    <TestEntry testId="54" executionId="a6345f28-8cef-4916-9bdd-a7ce0994bed4" testListId="1" />
+    <TestEntry testId="55" executionId="0b6b451f-c74a-4ca1-8a5b-547054649c0f" testListId="1" />
+    <TestEntry testId="56" executionId="6e9b1456-1727-4b68-b585-f300fbec9e3e" testListId="1" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="1cf0b311-9d1d-4bf2-a020-d4a37c74e324" testId="2" testName="[Error Prevention] Expression-reliant objects must have an expression" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="d37e6ddd-2541-4308-9a46-03e9365dae0b" testId="3" testName="[DAX Expressions] Avoid using '1-(x/y)' syntax" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="4a6e724e-077d-4133-885a-017311f4e676" testId="4" testName="[DAX Expressions] Avoid using '1-(x/y)' syntax" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="da68326b-bdd7-4e95-be2f-69c6486be710" testId="5" testName="[DAX Expressions] Avoid using the IFERROR function" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="d117f6d0-7fdd-46ad-8aef-2d66c1a2d9b0" testId="6" testName="[DAX Expressions] Column references should be fully qualified" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="2303c334-dc4b-43af-8200-a21a1871e112" testId="7" testName="[DAX Expressions] Filter column values with proper syntax" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>2 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  [Sales Region Item Currency] (Measure)
+  [ExchangeRate Value] (Measure)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7774d422-a38b-4f49-b50b-ee87884a8e62" testId="8" testName="[DAX Expressions] Inactive relationships that are never activated" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="f79e03d6-0d03-4055-acf7-cbc6b9c0a70c" testId="9" testName="[DAX Expressions] Measures should not be direct references of other measures" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="9271c998-8df0-4770-87a2-bef8c07c866c" testId="10" testName="[DAX Expressions] No two measures should have the same definition" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="9cb3376e-ef3e-4a1a-8dd1-a8dacf07c475" testId="11" testName="[DAX Expressions] The EVALUATEANDLOG function should not be used in production models" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="03511402-b6ed-4f46-a707-1e98b7cc3532" testId="12" testName="[DAX Expressions] Use the DIVIDE function for division" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>1 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  [Maintenance Kit Price] (Measure)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="af77db65-a89c-4fb2-9ddc-ee6d7dfd7787" testId="13" testName="[DAX Expressions] Use the TREATAS function instead of INTERSECT for virtual relationships" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="82af7faf-b6d7-4034-ba93-c7ad07a8fb94" testId="14" testName="[Error Prevention] Avoid invalid characters in descriptions" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="c410a639-0e47-4a5c-a9cd-16c79a80d4b2" testId="15" testName="[Error Prevention] Avoid invalid characters in names" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="4f0dda88-11c7-41b5-8926-2edb39adb3ec" testId="16" testName="[Error Prevention] Avoid structured data sources with provider partitions" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="6a5f1ace-fd1b-43e5-bff9-902dae87d5dd" testId="17" testName="[Error Prevention] Data columns must have a source column" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="9d9f7170-9dcf-4c7b-bf6b-1be65649c83a" testId="18" testName="[Error Prevention] Relationship columns should be of the same data type" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>2 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  'Dynamic Hypothesis'[Value4] --&gt; '.Hypothesis'[Hypothesis] (Relationship)
+  'Dynamic Hypothesis'[Value5] --&gt; '.Engine/Percussion'[Engine/Percussion] (Relationship)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a3389cb4-2cf8-47dd-95b3-00aefd818d34" testId="19" testName="[Error Prevention] Set IsAvailableInMdx to true on necessary columns" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="656deaee-aa54-4593-94b2-a953eac029df" testId="20" testName="[Formatting] Hide fact table columns" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="d945e314-05fe-4428-97eb-af1c5607c363" testId="21" testName="[Formatting] Hide foreign keys" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="4b98d149-d791-4ed5-916f-9091dc3ed9dd" testId="22" testName="[Formatting] Objects should not start or end with a space" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="2ad93c19-49a0-4835-a4c7-30da2db8fba8" testId="23" testName="[Formatting] Percentage measures should be formatted with thousands separators and 1 decimal" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="63f7280c-9c56-41ed-bb49-b097419a3ca8" testId="24" testName="[Formatting] Provide format string for &quot;Date&quot; columns" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="341dbcd0-734f-459b-84cc-0167795c2c98" testId="25" testName="[Formatting] Whole numbers should be formatted with thousands separators and no decimals" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="9dba51ca-6f98-43a1-bfa0-03953c2618d9" testId="26" testName="[Maintenance] Remove data sources not referenced by any partitions" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="a0338730-d760-440e-baaf-bbf2fb29e8d0" testId="27" testName="[Maintenance] First letter of objects must be capitalized" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="1e62e663-224c-4d3e-80b8-53574d3405c1" testId="28" testName="[Maintenance] Object names must not contain special characters" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="fd3af2a8-af3a-43f9-b270-5e54caea902e" testId="29" testName="[Maintenance] Trim object names" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="7fc74163-f197-4bfb-89dd-8eeafe14acce" testId="30" testName="[Performance] Avoid excessive bi-directional or many-to-many relationships" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="25750d51-eceb-452a-9b6d-59ef502ca3e9" testId="31" testName="[Performance] Date/calendar tables should be marked as a date table" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="34909d82-7759-45cc-9628-723b4b7245f6" testId="32" testName="[Performance] Many-to-many relationships should be single-direction" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="2a8bc374-a7d4-4d15-bc18-37b4443f566a" testId="33" testName="[Performance] Avoid one-to-one relationships" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="19d23591-4925-48a9-abd3-bdbb6c76312c" testId="34" testName="[Formatting] Numeric columns missing a format string" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>71 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  'Dim Item'[Weight Per Unit] (Column)
+  'Dim Item'[Purchase Officer] (Column)
+  'Dim Item'[Standard Cos tPer Stock Unit] (Column)
+  'Dim Item'[TotalGwpFactorKgCo2eKg] (Column)
+  'Dim Item'[MaterialGwpFactorKgCo2eKg] (Column)
+  'Dim Item'[ProcessingGwpFactorKgCo2eKg] (Column)
+  'Dim Item'[EolFactor2023kgCO2eT] (Column)
+  'Dim Item'[GrossWeight] (Column)
+  'Dim Item'[NetWeight] (Column)
+  'Dim Item'[NetWeightMDG] (Column)
+  'Dim Item'[GrossWeightSAP] (Column)
+  'Dim Item'[NetWeightSAP] (Column)
+  'Dim Item'[StandardPriceLean] (Column)
+  'Dim Equipment Information'[Latitude] (Column)
+  'Dim Equipment Information'[Longitude] (Column)
+  'BoM Detail POC'[Quantity Adjusted] (Column)
+  'BoM Item Price'[Price] (Column)
+  'Price List MAPL Aurora'[Price] (Column)
+  'Dim Exchange Rate'[FixedRate] (Column)
+  'Dim Exchange Rate'[Sek Rate] (Column)
+  'Dim Exchange Rate'[Eur Rate] (Column)
+  'Dim Exchange Rate'[Usd Rate] (Column)
+  'Global Lifecycle Database'[GLE Price] (Column)
+  'Global Lifecycle Database'[Quantity] (Column)
+  'Global Lifecycle Database'[Total Replacements] (Column)
+  'Global Lifecycle Database'[Total Quantity_Slots] (Column)
+  'Global Lifecycle Database'[Engine Reading] (Column)
+  'Global Lifecycle Database'[Engine Actual Life] (Column)
+  'Global Lifecycle Database'[Percussion Reading] (Column)
+  'Global Lifecycle Database'[Percussion Actual Life] (Column)
+  'Global Lifecycle Database'[Engine_H1] (Column)
+  'Global Lifecycle Database'[Engine_H2] (Column)
+  'Global Lifecycle Database'[Engine_H3] (Column)
+  'Global Lifecycle Database'[Percussion_H1] (Column)
+  'Global Lifecycle Database'[Percussion_H2] (Column)
+  'Global Lifecycle Database'[Percussion_H3] (Column)
+  'Global Lifecycle Database'[Engine_H4] (Column)
+  'Global Lifecycle Database'[Engine_H5] (Column)
+  'Global Lifecycle Database'[Percussion_H4] (Column)
+  'Global Lifecycle Database'[Percussion_H5] (Column)
+  'Global Lifecycle Database'[Engine_H61] (Column)
+  'Global Lifecycle Database'[Engine_H62] (Column)
+  'Global Lifecycle Database'[Percussion_H61] (Column)
+  'Global Lifecycle Database'[Percussion_H62] (Column)
+  'Global Lifecycle Database'[Engine_Utilization] (Column)
+  'Global Lifecycle Database'[Percussion_Utilization] (Column)
+  'Global Lifecycle Database'[Engine_Utilization_Yearly] (Column)
+  'Global Lifecycle Database'[Percussion_Utilization_Yearly] (Column)
+  'Global Lifecycle Database'[Engine_Utilization_Raw] (Column)
+  'Global Lifecycle Database'[Percussion_Utilization_Raw] (Column)
+  'Global Lifecycle Database'[Engine_Utilization_Yearly_Raw] (Column)
+  'Global Lifecycle Database'[Percussion_Utilization_Yearly_Raw] (Column)
+  'Global Lifecycle Database'[Engine_Min] (Column)
+  'Global Lifecycle Database'[Engine_Max] (Column)
+  'Global Lifecycle Database'[Percussion_Min] (Column)
+  'Global Lifecycle Database'[Percussion_Max] (Column)
+  'Global Lifecycle Database'[Engine_Min_Yearly] (Column)
+  'Global Lifecycle Database'[Engine_Max_Yearly] (Column)
+  'Global Lifecycle Database'[Percussion_Min_Yearly] (Column)
+  'Global Lifecycle Database'[Percussion_Max_Yearly] (Column)
+  'Global Lifecycle Database'[Engine_Min_Raw] (Column)
+  'Global Lifecycle Database'[Engine_Max_Raw] (Column)
+  'Global Lifecycle Database'[Percussion_Min_Raw] (Column)
+  'Global Lifecycle Database'[Percussion_Max_Raw] (Column)
+  'Global Lifecycle Database'[Engine_Min_Yearly_Raw] (Column)
+  'Global Lifecycle Database'[Engine_Max_Yearly_Raw] (Column)
+  'Global Lifecycle Database'[Percussion_Min_Yearly_Raw] (Column)
+  'Global Lifecycle Database'[Percussion_Max_Yearly_Raw] (Column)
+  'Global Lifecycle Database'[Engine_Delta_Raw] (Column)
+  'Global Lifecycle Database'[Percussion_Delta_Raw] (Column)
+  'Global Lifecycle Database'[WorkDurationHours] (Column)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7808b833-645f-431a-aeb7-1b21735592ff" testId="35" testName="[Performance] Do not use floating point data types" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="dc749a36-97bc-4f30-828d-46c45ae0e7bb" testId="36" testName="[Performance] Minimize Power Query transformations" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>3 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  BoM Header-84d86fe1-3299-4988-b9db-e89b41a7d4bf (Partition (M - Import))
+  Dim Age Flag (Partition (M - Import))
+  Dim Exchange Rate (Partition (M - Import))</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="37668c28-3c1f-4914-81f8-6c067b907d81" testId="37" testName="[Performance] Avoid using native queries" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>1 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  Price List MAPL Aurora (Partition (M - Import))</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c9e4a51b-3958-42a3-bee2-f48d5115cfa0" testId="38" testName="[Performance] Avoid merge operations in Power Query" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="989c514f-e1ee-491f-b225-3264fcdb81de" testId="39" testName="[Performance] Model should have a date table" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="a82359b7-c8d2-4a05-b558-38f0eba5829b" testId="40" testName="[Performance] Remove auto-date table" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="3a97b075-fabd-4fd5-8ba9-2da767fce705" testId="41" testName="[Performance] Set IsAvailableInMdx to false on non-attribute columns" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>20 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  'BoM Header'[Installation Date] (Column)
+  'BoM Header'[Serial Number] (Column)
+  'BoM Header'[Delivery Date] (Column)
+  'BoM Header'[SerialNumber] (Column)
+  'Dim Item'[Item_Link] (Column)
+  'BoM Detail POC'[BomHeader_Link] (Column)
+  'BoM Detail POC'[Item_Link] (Column)
+  'GLD Assets'[Serial Number] (Column)
+  'GLD Data Analysis'[Serial Number] (Column)
+  'GLD Data Analysis'[Item_Link] (Column)
+  'Price List MAPL Aurora'[Item_Link] (Column)
+  'Price List MAPL Aurora'[BomItemMaplPriceReducedFact_Link] (Column)
+  'BoM Kit Interval Hours'[Serial Number] (Column)
+  'Global Lifecycle Database'[BomHeader_Link] (Column)
+  'Global Lifecycle Database'[Item_Link] (Column)
+  'Global Lifecycle Database'[Reading Date] (Column)
+  '.Engine/Percussion'[Engine/Percussion] (Column)
+  '.Engine/Percussion'[Sort] (Column)
+  'BoM Access BoM Bridge'[BomHeader_Link] (Column)
+  'BoM Access BoM Bridge'[BomAccessBridge_Link] (Column)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c47f7909-e227-4eb2-ae06-5da6ad67a64f" testId="42" testName="[Performance] Split date and time" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="40ddece6-7a70-4843-a31c-641cc348e438" testId="43" testName="[Maintenance] Add calculated column descriptions" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>1 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  Model (Model)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6f8ef1dd-aebc-4184-82f3-654f98dea555" testId="44" testName="[Maintenance] Add measure descriptions" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>1 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  Model (Model)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1f7b13d5-c3e7-4b5c-9299-ea84f71ca275" testId="45" testName="[Maintenance] Visible tables with no description" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="52c8f08d-7e58-4b89-ba36-f665bf796437" testId="46" testName="[Maintenance] Remove data platform system columns" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="f89074c4-5601-4c5e-9d83-ee6d909b7f20" testId="47" testName="[Maintenance] Remove unused link fields" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>18 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  'BoM Header'[BomHeaderNumber_Link] (Column)
+  'BoM Header'[Item_Link] (Column)
+  'BoM Header'[Equipment_Link] (Column)
+  'BoM Header'[BomAccessBridge_Link] (Column)
+  'Dim BoM Mapping Item Portfolio'[BomMappingItemPortfolio_Link] (Column)
+  'Dim BoM Mapping Item Portfolio'[Component_Link] (Column)
+  'BoM Access'[BomAccess_Link] (Column)
+  'Dim Customer'[ShipToCustomer_Link] (Column)
+  'Dim Customer'[SoldToCustomer_Link] (Column)
+  'BoM Detail POC'[BomDetail_Link] (Column)
+  'BoM Detail POC'[SerialNumber_ItemCode_Link] (Column)
+  'BoM Item Price'[BomItemPrice_Link] (Column)
+  'GLD Data Analysis'[SerialNumber_ItemCode_Link] (Column)
+  'Price List MAPL Aurora'[Entity_Link] (Column)
+  'BoM Kit Interval Hours'[Item_Link] (Column)
+  'Dim Exchange Rate'[ExchangeRate_Link] (Column)
+  'Dim Exchange Rate'[FixedRate_Link] (Column)
+  'Global Lifecycle Database'[ProductModelStructure_Link] (Column)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="98a24b5a-d1b6-4235-8009-1af9463666fe" testId="48" testName="[Formatting] Provide format string for &quot;Month&quot; columns" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="8d0a017e-a345-47e3-b54a-5ecaea9c231c" testId="49" testName="[Maintenance] Add CICD_TagName parameter" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="f3bcd0ef-747f-46b3-ac6e-9003d2395c2d" testId="50" testName="[Maintenance] Hide access and security tables" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="cffe5f64-884f-4be2-8521-89bb09b74c3b" testId="51" testName="[Maintenance] Dimension tables should have 'Dim' prefix" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>3 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  'BoM Item Price' (Table (Import))
+  'GLD Assets' (Table (Import))
+  'Date' (Table (Import))</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="39117856-a0d2-4412-a744-3480c2dc41f9" testId="52" testName="[Maintenance] Measures must live in a measure table" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="02319005-5db7-4548-bbde-49c8969d648f" testId="53" testName="[Maintenance] Display folders required when table has many measures" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="a6345f28-8cef-4916-9bdd-a7ce0994bed4" testId="54" testName="[Error Prevention] RangeStart and RangeEnd in M, EnableRefreshPolicy is false" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="0b6b451f-c74a-4ca1-8a5b-547054649c0f" testId="55" testName="[Error Prevention] M must use valid RangeStart and RangeEnd operators" testType="unitTest" testListId="1" outcome="Passed">
+      <Output />
+    </UnitTestResult>
+    <UnitTestResult executionId="6e9b1456-1727-4b68-b585-f300fbec9e3e" testId="56" testName="[Formatting] Date-related fields should not be stored as Text" testType="unitTest" testListId="1" outcome="Failed">
+      <Output>
+        <ErrorInfo>
+          <Message>3 object(s) in violation of rule</Message>
+          <StackTrace>Objects in violation:
+  'BoM Header'[Levels Calculated Datetime] (Column)
+  'Dim Equipment Information'[MyCOMPANY License Expiry Date] (Column)
+  'Global Lifecycle Database'[Transaction Date] (Column)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

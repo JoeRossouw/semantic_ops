@@ -1,0 +1,8 @@
+relationship 14ac9594-71aa-457a-8915-d34fb0634d31
+	fromColumn: pbi_snapshots_change_history.Table_Link
+	toColumn: pbi_snapshots_mapping.Table_Link
+
+relationship 5173a43f-f142-41e1-aad8-19a2902ccaf5
+	fromColumn: pbi_snapshots_change_history.dataset_batch_Link
+	toColumn: pbi_semantic_model.dataset_batch_Link
+

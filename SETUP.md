@@ -39,7 +39,7 @@ Site will be available at: `https://joerossouw.github.io/semantic_ops/`
 ## Content Organization
 
 - **Blog posts**: Write in `docs/blog/` with LinkedIn sections
-- **Tool docs**: Reference documentation in `docs/tools/`
+- **Tool guides**: Reference documentation in `docs/tool-guides/`
 - **Tutorials**: Step-by-step guides in `docs/tutorials/`
 - **Guides**: How-to content in `docs/guides/`
 - **Scripts**: Python tools in `scripts/` folder
@@ -68,7 +68,7 @@ Site will be available at: `https://joerossouw.github.io/semantic_ops/`
 The `!!python/name:` tags are MkDocs-specific and safe to ignore in IDE warnings.
 
 ### Links not working
-Use relative paths: `[Link](../tools/bpa-viewer.md)` not absolute paths.
+Use relative paths: `[Link](../tool-guides/bpa-viewer-guide.md)` not absolute paths.
 
 ### Images not showing
 Place images in `docs/images/` and reference: `![Alt](../images/pic.png)`

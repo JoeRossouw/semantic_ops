@@ -78,8 +78,10 @@ You're not learning to code. You're learning to articulate problems. AI handles 
 
 **Download:** [visualize_all_relationships.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py)
 
-**Full Documentation:** [Relationship Visualizer Tool](../../tools/relationship-viewer.md)  
-**Tutorial:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step prompts)
+**Full Documentation:** [Relationship Visualizer Tool](../../tool-guides/relationship-viewer-guide.md)  
+**Tutorial:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step prompts)  
+**Live Demo:** [Try the Interactive Viewer](../../samples/example_output/relationships_viewer.html) - See 6 sample models in action  
+**Live Demo:** [Try the Interactive Viewer](../../samples/example_output/relationships_viewer.html) - See 6 sample models in action
 
 ### What Makes This Tool Interesting
 
@@ -142,7 +144,7 @@ If you build something with PBIP + AI, let me know. The future of BI development
 ---
 
 **Resources:**
-- [Tool Documentation](../../tools/relationship-viewer.md)
+- [Tool Documentation](../../tool-guides/relationship-viewer-guide.md)
 - [Tutorial: Building Tools with AI](../../tutorials/building-tools-with-ai.md)
 - [Scripts Folder](https://github.com/JoeRossouw/semantic_ops/tree/main/scripts)
 

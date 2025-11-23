@@ -1,0 +1,42 @@
+relationship 0df345fd-9199-2c88-0d46-1ca4dd475b98
+	crossFilteringBehavior: bothDirections
+	fromColumn: pbi_storagetablecolumnsegments.TableColumn_Link
+	toColumn: pbi_storagetablecolumns.TableColumn_Link
+
+relationship a28adb0c-700a-9d93-d2ce-8c41dc42555a
+	fromColumn: pbi_storagetables.dataset_batch_Link
+	toColumn: pbi_semantic_models.dataset_batch_Link
+
+relationship 34b1bd8a-2eac-1017-1cf3-99b0f61556f9
+	crossFilteringBehavior: bothDirections
+	fromColumn: pbi_storagetablecolumns.xReferenceObject_link
+	toColumn: pbi_calcdependency_summary.xReferenceObject_Link
+
+relationship e6d54a66-d437-68cf-e93f-31dca12ece89
+	toCardinality: many
+	fromColumn: pbi_calcdependency.xReferenceObject_Link
+	toColumn: pbi_storagetablecolumns.xReferenceObject_link
+
+relationship 5e6b9fcc-33e1-eb6a-6792-40b51bf9404b
+	fromColumn: pbi_semantic_models.Date
+	toColumn: 'Dim Date'.Date
+
+relationship 44f91b39-544d-3e52-50d9-156f14ba66cd
+	crossFilteringBehavior: bothDirections
+	fromColumn: pbi_storagetables.UniqueTableDatasetID
+	toColumn: pbi_table_summary.UniqueTableDatasetID
+
+relationship ac81b1ef-9449-f81c-f3e7-57a5e8f66311
+	crossFilteringBehavior: bothDirections
+	fromColumn: pbi_storagetablecolumns.Table_Link
+	toColumn: pbi_storagetables.Table_Link
+
+relationship 691b8507-f94f-2ae4-143d-be43500acd60
+	crossFilteringBehavior: bothDirections
+	fromColumn: pbi_storagetablecolumns.Report_columns_link
+	toColumn: report_columns_summary.Report_colum_link
+
+relationship 77d0590c-17de-6fe3-99d8-4152610944cc
+	fromColumn: report_columns_visuals_detail.Report_column_link
+	toColumn: report_columns_summary.Report_colum_link
+

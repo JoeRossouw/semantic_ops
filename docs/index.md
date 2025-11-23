@@ -4,7 +4,7 @@ Welcome to **semantic_ops**. Practical tools, workflows, and AI-assisted develop
 
 ## What's Here
 
-## [Tools](tools/)
+## [Tool Guides](tool-guides/)
 Python automation scripts for Power BI development and CI/CD workflows
 
 ## [Blog](blog/)

@@ -5,6 +5,24 @@ Interactive HTML visualization tool for Power BI semantic model relationships fr
 [:material-download: Download Script](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py){ .md-button .md-button--primary }
 [:fontawesome-brands-github: View on GitHub](https://github.com/JoeRossouw/semantic_ops/blob/main/scripts/visualize_all_relationships.py){ .md-button }
 
+[:material-eye: **View Live Demo** →](../../samples/example_output/relationships_viewer.html){ .md-button .md-button--primary target="_blank" }
+
+---
+
+## Live Demo
+
+**[🔍 Open Interactive Demo](../../samples/example_output/relationships_viewer.html){ target="_blank" }**
+
+Try the interactive relationship visualizer with 6 sample Power BI models:
+
+- **Switch between models** using the dropdown (Model_A through Model_F)
+- **Click any table** to highlight its relationships (try both visualization modes)
+- **Toggle modes** between "All Relations" (direct connections) and "Filter Direction" (transitive filter chains)
+- **Filter tables** using the side panel to focus on specific areas of complex models
+- **Interactive graph** - zoom with mouse wheel, drag to pan, physics-based auto-layout
+
+The demo shows real model relationships (with anonymized data) from models ranging from simple (2-3 relationships) to complex (14 relationships). Perfect for seeing the tool in action before running it on your own models.
+
 ---
 
 ## Overview

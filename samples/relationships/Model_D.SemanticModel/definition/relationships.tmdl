@@ -1,0 +1,58 @@
+relationship 48c85d1d-4bd5-4622-a61b-000d0269ed68
+	fromColumn: pbi_tables_enhanced.dataset_batch_Link
+	toColumn: pbi_semantic_model.dataset_batch_Link
+
+relationship 5cb8d328-7d08-439d-8bed-e7fff051ea80
+	fromColumn: pbi_measures.table_Link
+	toColumn: pbi_tables_enhanced.table_Link
+
+relationship 506afc4c-4179-4e09-9aa6-261832af143a
+	fromColumn: pbi_partitions.table_Link
+	toColumn: pbi_tables_enhanced.table_Link
+
+relationship 9ff8370c-07e6-4ce8-b1ba-ae3bd54025e3
+	fromColumn: pbi_reports_pages.Report_Link
+	toColumn: pbi_reports.Report_Link
+
+relationship 81820373-1c19-4dd4-86f2-7d8d25a7bfb8
+	fromColumn: pbi_tablepermissions.table_Link
+	toColumn: pbi_tables_enhanced.table_Link
+
+relationship 85496394-f076-4262-b880-215446033f43
+	fromColumn: pbi_workspace_parameters.dataset_batch_Link
+	toColumn: pbi_semantic_model.dataset_batch_Link
+
+relationship 1766a3eb-df4c-4b23-a9f0-180353925da4
+	fromColumn: pbi_semantic_model_parameters.dataset_batch_Link
+	toColumn: pbi_semantic_model.dataset_batch_Link
+
+relationship 37ddd7be-8b0b-41d9-8f0d-2f079effc16d
+	fromColumn: pbi_relationships.tableFrom_Link
+	toColumn: pbi_tables_enhanced.table_Link
+
+relationship eb3a5acc-d82f-48e5-a234-37d720ff4b56
+	fromColumn: pbi_report_catalogue.'Semantic Model ID'
+	toColumn: pbi_catalogue.'Semantic Model ID'
+
+relationship a8d165f0-55d3-43c1-8f2a-cfdddbd235c5
+	fromColumn: pbi_columns_enhanced.table_Link
+	toColumn: pbi_tables_enhanced.table_Link
+
+relationship 715b3d58-c69e-477b-97ee-1cbd631badb3
+	fromColumn: pbi_reports.dataset_batch_Link
+	toColumn: pbi_semantic_model.dataset_batch_Link
+
+relationship b21776b7-e7b2-4cd7-8519-8d9b9bb58267
+	fromColumn: pbi_rolemembership.dataset_batch_Link
+	toColumn: pbi_semantic_model.dataset_batch_Link
+
+relationship 22cd2622-2fc0-45d3-9c02-6432f2a879ec
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: pbi_model.dataset_batch_Link
+	toColumn: pbi_semantic_model.dataset_batch_Link
+
+relationship 960cba9b-ca27-492d-86ff-2b5314c2c776
+	fromColumn: pbi_semantic_model.'Semantic Model ID'
+	toColumn: pbi_catalogue.'Semantic Model ID'
+
