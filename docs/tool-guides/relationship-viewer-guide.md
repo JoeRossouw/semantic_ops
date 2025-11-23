@@ -5,13 +5,13 @@ Interactive HTML visualization tool for Power BI semantic model relationships fr
 [:material-download: Download Script](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py){ .md-button .md-button--primary }
 [:fontawesome-brands-github: View on GitHub](https://github.com/JoeRossouw/semantic_ops/blob/main/scripts/visualize_all_relationships.py){ .md-button }
 
-[:material-eye: **View Live Demo** →](../../samples/example_output/relationships_viewer.html){ .md-button .md-button--primary target="_blank" }
+[:material-eye: **View Live Demo** →](../demos/relationships_viewer.html){ .md-button .md-button--primary target="_blank" }
 
 ---
 
 ## Live Demo
 
-**[🔍 Open Interactive Demo](../../samples/example_output/relationships_viewer.html){ target="_blank" }**
+**[🔍 Open Interactive Demo](../demos/relationships_viewer.html){ target="_blank" }**
 
 Try the interactive relationship visualizer with 6 sample Power BI models:
 
@@ -235,3 +235,4 @@ This tool works seamlessly in automated pipelines:
 - **Visualization Library**: vis.js Network (loaded from CDN)
 - **Graph Layout**: ForceAtlas2 physics simulation
 - **Browser Compatibility**: Modern browsers (Chrome, Firefox, Edge, Safari)
+

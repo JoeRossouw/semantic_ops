@@ -80,8 +80,7 @@ You're not learning to code. You're learning to articulate problems. AI handles 
 
 **Full Documentation:** [Relationship Visualizer Tool](../../tool-guides/relationship-viewer-guide.md)  
 **Tutorial:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step prompts)  
-**Live Demo:** [Try the Interactive Viewer](../../samples/example_output/relationships_viewer.html) - See 6 sample models in action  
-**Live Demo:** [Try the Interactive Viewer](../../samples/example_output/relationships_viewer.html) - See 6 sample models in action
+**Live Demo:** [Try the Interactive Viewer](../../demos/relationships_viewer.html) - See 6 sample models in action
 
 ### What Makes This Tool Interesting
 
@@ -150,3 +149,4 @@ If you build something with PBIP + AI, let me know. The future of BI development
 
 **Connect:**  
 Have questions or want to share what you've built? Open an issue or reach out!
+

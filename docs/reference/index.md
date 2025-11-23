@@ -31,3 +31,4 @@ Catalog of standard BPA rules with explanations, severity levels, and remediatio
 - [Tabular Editor Documentation](https://docs.tabulareditor.com/)
 - [TMDL Language Reference](https://learn.microsoft.com/analysis-services/tmdl/tmdl-overview)
 - [Power BI REST API](https://learn.microsoft.com/rest/api/power-bi/)
+

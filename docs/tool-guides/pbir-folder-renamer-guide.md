@@ -254,3 +254,4 @@ MIT - Use freely in your projects
 ## Get Ready for January 2026
 
 PBIR is becoming mandatory. Start using readable folder names now, before your team is forced to deal with GUID-based code reviews.
+

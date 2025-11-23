@@ -160,8 +160,8 @@ extra:
 
 # Navigation Structure
 nav:
-  - Home: index.md
   - Blog: blog/index.md
+  - Home: index.md
   
   - Tool Guides:
     - BPA Results Viewer: tool-guides/bpa-viewer-guide.md

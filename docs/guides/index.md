@@ -28,3 +28,4 @@ Git workflows, branching strategies, and code review processes for Power BI Proj
 ## Request a Guide
 
 Need documentation for a specific workflow? [Open an issue](https://github.com/JoeRossouw/semantic_ops/issues) with your use case.
+

@@ -4,7 +4,7 @@ Python automation scripts for Power BI development, quality analysis, and CI/CD 
 
 ## Available Tools
 
-### [BPA Results Viewer](bpa-viewer.md)
+### [BPA Results Viewer](bpa-viewer-guide.md)
 Interactive HTML dashboard for Tabular Editor Best Practice Analyzer results.
 
 **Use case**: Visualize BPA compliance across multiple semantic models, track violations by severity, and filter by category.
@@ -17,7 +17,7 @@ Interactive HTML dashboard for Tabular Editor Best Practice Analyzer results.
 
 ---
 
-### [Relationship Visualizer](relationship-viewer.md)
+### [Relationship Visualizer](relationship-viewer-guide.md)
 Network diagram generator for Power BI semantic model relationships.
 
 **Use case**: Understand table relationships, filter propagation, and model complexity at a glance.
@@ -30,7 +30,7 @@ Network diagram generator for Power BI semantic model relationships.
 
 ---
 
-### [PBIR Folder Renamer](pbir-folder-renamer.md)
+### [PBIR Folder Renamer](pbir-folder-renamer-guide.md)
 Rename Power BI report page and visual folders from GUIDs to human-readable names.
 
 **Use case**: Make code reviews and git diffs understandable by converting meaningless GUIDs to descriptive names.
@@ -82,3 +82,4 @@ python scripts/visualize_all_relationships.py --search-path ./models
 # Rename PBIR folders
 python scripts/rename_pbir_folders.py "path/to/Report.Report"
 ```
+

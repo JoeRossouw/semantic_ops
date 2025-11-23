@@ -44,3 +44,4 @@ Learn how to build production-ready automation tools through conversational prom
 Optional but recommended:
 - **Tabular Editor 3** (for BPA and advanced modeling)
 - **VS Code** (for editing TMDL files)
+
