@@ -61,7 +61,7 @@ theme:
     
     # Table of Contents
     - toc.follow
-    # - toc.integrate
+    - toc.integrate
     
     # Search
     - search.suggest
