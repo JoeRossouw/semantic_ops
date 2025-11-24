@@ -163,10 +163,10 @@ nav:
   - Home: index.md
   - Blog: blog/index.md
   
-  - Tool Guides:
-    - BPA Results Viewer: tool-guides/bpa-viewer-guide.md
-    - Relationship Visualizer: tool-guides/relationship-viewer-guide.md
-    - PBIR Folder Renamer: tool-guides/pbir-folder-renamer-guide.md
+  - Tools:
+    - BPA Results Viewer: tools/bpa-viewer-guide.md
+    - Relationship Visualizer: tools/relationship-viewer-guide.md
+    - PBIR Folder Renamer: tools/pbir-folder-renamer-guide.md
   
   - Prompts:
     - Building Tools with AI: prompts/building-tools-with-ai.md

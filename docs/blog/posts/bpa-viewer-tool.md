@@ -130,7 +130,7 @@ Generated HTML is self-contained (no external dependencies) with JavaScript for:
 
 **Download:** [visualize_bpa_results.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/tools/visualize_bpa_results.py)
 
-**Full Documentation:** [BPA Results Viewer Tool](../../tool-guides/bpa-viewer-guide.md) - Detailed setup and usage
+**Full Documentation:** [BPA Results Viewer Tool](../../tools/bpa-viewer-guide.md) - Detailed setup and usage
 
 [:material-open-in-new: Launch Interactive Demo](../../demos/bpa_results_viewer.html){ .md-button .md-button--primary target="_blank" }
 
@@ -197,6 +197,6 @@ Without opening XML, without CI/CD infrastructure, without external tools.
 ---
 
 **Related:**
-- [Relationship Visualizer Tool](../../tool-guides/relationship-viewer-guide.md)
+- [Relationship Visualizer Tool](../../tools/relationship-viewer-guide.md)
 - Blog: [How I Built a Power BI Tool with AI](agentic-ai-pbip.md)
 

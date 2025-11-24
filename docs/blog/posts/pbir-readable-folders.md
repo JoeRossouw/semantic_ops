@@ -102,7 +102,7 @@ Now your git diffs tell the story.
 
 **Download:** [rename_pbir_folders.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/rename_pbir_folders.py)
 
-Or see the [full documentation page](../../tool-guides/pbir-folder-renamer-guide.md) for detailed setup instructions.
+Or see the [full documentation page](../../tools/pbir-folder-renamer-guide.md) for detailed setup instructions.
 
 ## How It Works
 
@@ -205,7 +205,7 @@ Readable folder names aren't optional. They're essential for making code reviews
 
 **Resources:**
 - [Rui Romano's Announcement](https://powerbi.microsoft.com/en-us/blog/pbir-will-become-the-default-power-bi-report-format-get-ready-for-the-transition/) (November 17, 2025)
-- [PBIR Folder Renamer Tool](../../tool-guides/pbir-folder-renamer-guide.md)
+- [PBIR Folder Renamer Tool](../../tools/pbir-folder-renamer-guide.md)
 - [Microsoft PBIR Documentation](https://learn.microsoft.com/power-bi/developer/projects/projects-report)
 
 **Related:**

@@ -6,7 +6,7 @@ Welcome to **semantic_ops**. Practical tools, workflows, and AI-assisted develop
 
 Technical posts about tools, workflows, and agentic AI for Power BI development
 
-[**Tool Guides →**](tool-guides/)
+[**Tools →**](tools/)
 
 Python automation scripts for Power BI development and CI/CD workflows
 
