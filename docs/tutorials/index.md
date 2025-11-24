@@ -1,8 +1,8 @@
-# Tutorials
+# Prompts
 
-Step-by-step guides for building Power BI automation tools using AI assistance.
+Step-by-step AI prompts for building automation tools.
 
-## Available Tutorials
+## Available Prompts
 
 ### [Building Tools with AI: A Power BI Relationship Viewer](building-tools-with-ai.md)
 Learn how to build production-ready automation tools through conversational prompts with AI.

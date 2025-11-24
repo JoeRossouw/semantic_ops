@@ -39,7 +39,7 @@ This isn't theoretical. I built a tool live during the session.
 
 I wanted a good demo for the session: something that showed what's possible with AI and PBIP. Before the meetup, I spent about 10 minutes building the tool with Copilot, refining prompts until I had exactly what I needed. Another 10 minutes to document the process.
 
-I captured both approaches in the [building tools with AI tutorial](../../tutorials/building-tools-with-ai.md):
+I captured both approaches in the [building tools with AI prompts](../../tutorials/building-tools-with-ai.md):
 - **Iterative approach**: 6 progressive prompts, each adding features (interactive HTML, multi-model dropdown, table filtering)
 - **One-shot approach**: Single comprehensive prompt for time-constrained demos
 
@@ -79,7 +79,7 @@ You're not learning to code. You're learning to articulate problems. AI handles 
 **Download:** [visualize_all_relationships.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py)
 
 **Full Documentation:** [Relationship Visualizer Tool](../../tool-guides/relationship-viewer-guide.md)  
-**Tutorial:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step prompts)
+**Prompts:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step guide)
 
 [:material-open-in-new: Launch Interactive Demo](../../demos/relationships_viewer.html){ .md-button .md-button--primary target="_blank" }
 
@@ -145,7 +145,7 @@ If you build something with PBIP + AI, let me know. The future of BI development
 
 **Resources:**
 - [Tool Documentation](../../tool-guides/relationship-viewer-guide.md)
-- [Tutorial: Building Tools with AI](../../tutorials/building-tools-with-ai.md)
+- [Prompts: Building Tools with AI](../../tutorials/building-tools-with-ai.md)
 - [Scripts Folder](https://github.com/JoeRossouw/semantic_ops/tree/main/scripts)
 
 **Connect:**  
