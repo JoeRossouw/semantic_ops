@@ -128,7 +128,7 @@ Generated HTML is self-contained (no external dependencies) with JavaScript for:
 
 ## Get the Script
 
-**Download:** [visualize_bpa_results.py](https://github.com/JoeRossouw/semantic_ops/blob/main/tools/visualize_bpa_results.py)
+**Download:** [visualize_bpa_results.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/tools/visualize_bpa_results.py)
 
 **Full Documentation:** [BPA Results Viewer Tool](../../tool-guides/bpa-viewer-guide.md) - Detailed setup and usage
 
