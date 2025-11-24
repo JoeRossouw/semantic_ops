@@ -2,7 +2,7 @@
 
 I'm Joe Rossouw, based in Dublin leading BI work around enterprise analytics, metadata management, and building CI/CD automation for Power BI.
 
-![Joe Rossouw](assets/images/joe-rossouw.jpg){ width=800 }
+![Joe Rossouw](assets/images/joe-rossouw.jpg){ width=400 }
 
 ## What I Do
 
