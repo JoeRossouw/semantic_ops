@@ -152,6 +152,9 @@ markdown_extensions:
 
 # Extra Configuration
 extra:
+  analytics:
+    provider: google
+    property: G-X4C32474GY
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/JoeRossouw
