@@ -14,7 +14,7 @@ Python automation scripts for Power BI development:
 - **Relationship Visualizer** - Network diagrams of semantic model relationships
 - **PBIR Folder Renamer** - Convert GUID folders to readable names
 
-Plus guides, tutorials, and blog posts on AI-assisted Power BI development.
+Plus tool guides, prompts, and blog posts on AI-assisted Power BI development.
 
 **[→ Browse Tools & Documentation](https://joerossouw.github.io/semantic_ops/)**
 

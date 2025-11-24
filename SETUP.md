@@ -40,8 +40,7 @@ Site will be available at: `https://joerossouw.github.io/semantic_ops/`
 
 - **Blog posts**: Write in `docs/blog/` with LinkedIn sections
 - **Tool guides**: Reference documentation in `docs/tool-guides/`
-- **Tutorials**: Step-by-step guides in `docs/tutorials/`
-- **Guides**: How-to content in `docs/guides/`
+- **Prompts**: Step-by-step AI prompts in `docs/prompts/`
 - **Scripts**: Python tools in `scripts/` folder
 - **Samples**: Model/report samples in `samples/` folder
 

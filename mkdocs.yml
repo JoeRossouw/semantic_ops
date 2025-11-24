@@ -169,10 +169,4 @@ nav:
     - PBIR Folder Renamer: tool-guides/pbir-folder-renamer-guide.md
   
   - Prompts:
-    - Building Tools with AI: tutorials/building-tools-with-ai.md
-  
-  - Guides:
-    - guides/index.md
-  
-  - Reference:
-    - reference/index.md
+    - Building Tools with AI: prompts/building-tools-with-ai.md

@@ -10,17 +10,9 @@ Technical posts about tools, workflows, and agentic AI for Power BI development
 
 Python automation scripts for Power BI development and CI/CD workflows
 
-[**Prompts →**](tutorials/)
+[**Prompts →**](prompts/)
 
 Step-by-step AI prompts for building automation tools
-
-[**Guides →**](guides/)
-
-How-to documentation for CI/CD, Tabular Editor CLI, and automation workflows
-
-[**Reference →**](reference/)
-
-Technical documentation on PBIP, TMDL, and Power BI project formats
 
 ---
 
