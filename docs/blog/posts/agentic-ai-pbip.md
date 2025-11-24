@@ -27,7 +27,7 @@ The demo showed how Power BI Projects (PBIP) unlocks AI-assisted development in 
 
 The takeaway: **You cannot afford to wait.**
 
-![Joe Rossouw presenting at Dublin Fabric User Group](../../assets/images/blog/joe-rossouw-presenting.jpg){ width=400 }
+![Joe Rossouw presenting at Dublin Fabric User Group](../../assets/images/blog/joe-rossouw-presenting.jpg){ width=200 }
 
 ## Why CI/CD for Power BI?
 
