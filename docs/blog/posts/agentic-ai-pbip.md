@@ -215,6 +215,7 @@ If you build something with PBIP + AI, let me know. The future of BI development
 - [Tool Documentation](../../tools/relationship-viewer-guide.md)
 - [Prompts: Building Tools with AI](../../prompts/building-tools-with-ai.md)
 - [Scripts Folder](https://github.com/JoeRossouw/semantic_ops/tree/main/scripts)
+- [Tabular Editor: Agentic Development in Simple Terms](https://tabulareditor.com/blog/agentic-development-of-semantic-models-in-simple-terms)
 
 **Connect:**  
 Have questions or want to share what you've built? Open an issue or reach out!

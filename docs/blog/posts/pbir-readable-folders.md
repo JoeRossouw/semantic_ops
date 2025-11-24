@@ -181,16 +181,6 @@ These are professional development workflows. Power BI needed this.
 
 GUID folder names break the code review workflow. This script fixes it.
 
-## The Timeline
-
-From Rui Romano's announcement:
-- **January 2026**: PBIR becomes default format for all new reports
-- **January 2026**: Existing reports auto-convert to PBIR when edited
-- **2026 (GA)**: PBIR becomes the only supported format
-
-You have a few months to get your team's PBIR workflow right.
-
-Readable folder names aren't optional. They're essential for making code reviews actually work.
 
 ## Try It Yourself
 

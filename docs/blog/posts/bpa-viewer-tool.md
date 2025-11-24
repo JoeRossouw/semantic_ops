@@ -61,15 +61,6 @@ That's a test framework artifact, not a usable quality report. You have to parse
 - **Filter controls** - Show All, Failed Only, Passed Only, Expand All, Collapse All
 - **Violation details** - See exactly which tables/columns/measures failed each rule
 
-[SCREENSHOT: Dropdown showing multiple models with pass rates and timestamps - "D&A - Inventory Insights - 87.5% (2025-11-14 17:05)"]
-
-[SCREENSHOT: Stats bar showing color-coded pass rate (green/yellow/red based on %), passed/failed counts]
-
-[SCREENSHOT: Category sections - blue headers for all-pass categories, red headers for categories with failures]
-
-[SCREENSHOT: Expanded rule showing description, severity badge, violation list with specific objects]
-
-[SCREENSHOT: Filter buttons and expand/collapse controls]
 
 ## How It Works
 
@@ -146,7 +137,6 @@ python visualize_bpa_results.py
 
 Script scans recursively from current directory for `*.trx` files, processes them all, outputs `bpa_results_viewer.html`, and opens in browser.
 
-[SCREENSHOT: Terminal output showing script scanning, processing multiple TRX files, reporting rule counts and pass rates]
 
 ## Why This Matters
 
