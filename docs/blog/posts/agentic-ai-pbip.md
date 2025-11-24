@@ -27,7 +27,7 @@ The demo showed how Power BI Projects (PBIP) unlocks AI-assisted development in 
 
 The takeaway: **You cannot afford to wait.**
 
-![Joe Rossouw presenting at Dublin Fabric User Group](../../assets/images/blog/joe-rossouw-presenting.jpg){ width=200 }
+![Joe Rossouw presenting at Dublin Fabric User Group](../../assets/images/blog/joe-rossouw-presenting.jpg){ width=400 }
 
 ## Why CI/CD for Power BI?
 
@@ -104,6 +104,8 @@ During the live demo, I used the one-shot prompt. One minute, one request: build
 Copilot delivered a working relationship visualizer—the kind of thing that normally takes hours or that you skip because the effort isn't worth it.
 
 **This only works because PBIP gave AI something to read.**
+
+![Demo Tool - Relationship Visualizer](../../assets/images/blog/demo-tool.jpg)
 
 [:material-open-in-new: Try the Interactive Demo](../../demos/relationships_viewer.html){ .md-button .md-button--primary target="_blank" }
 
