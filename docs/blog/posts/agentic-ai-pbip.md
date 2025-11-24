@@ -21,7 +21,7 @@ Last week at the Dublin Fabric User Group, I presented on **Power BI CI/CD: From
 
 The demo showed how Power BI Projects (PBIP) unlocks AI-assisted development in ways .pbix files never could.
 
-![Dublin Fabric User Group Meetup](../../assets/images/blog/dublin-fabric-meetup-nov-2025.jpg)
+![Joe Rossouw presenting at Dublin Fabric User Group](../../assets/images/blog/joe-rossouw-presenting.jpg)
 
 [:material-presentation: Download Presentation](https://github.com/JoeRossouw/semantic_ops/raw/main/assets/presentations/Dublin%20Fabric%20User%20Group%2018%20November%20CICD%2C%20Automation%20and%20Agentic%20AI.pdf){ .md-button .md-button--primary }
 
@@ -88,8 +88,6 @@ For reference, here's what we run in production:
 **Future roadmap:** Model Context Protocol (MCP) servers, custom graph database for metadata, automated BPA fixes, and data quality edits.
 
 ## Building Tools Through Conversation
-
-![Joe Rossouw presenting at Dublin Fabric User Group](../../assets/images/blog/joe-rossouw-presenting.jpg){ align=right width=300 }
 
 I started by showing how our repo is set up, how TMDL files and PBIR files are structured. Then I ran the Tabular Editor Best Practice Analyzer locally to identify quality issues. I showed the custom Fixer script we use to automatically fix common problems, then demonstrated how we use agentic prompting with saved prompts to add descriptions to tables and measures.
 
