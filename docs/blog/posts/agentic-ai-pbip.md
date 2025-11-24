@@ -101,7 +101,7 @@ I captured both approaches in the [building tools with AI prompts](../../prompts
 
 During the live demo, I used the one-shot prompt. One minute, one request: build a Python script that scans for TMDL files, parses relationships, and generates an interactive HTML visualization with filtering, legends, and CLI arguments.
 
-Copilot delivered a working relationship visualizer—the kind of thing that normally takes hours or that you skip because the effort isn't worth it.
+Copilot delivered a working relationship visualizer, the kind of thing that normally takes hours or that you skip because the effort isn't worth it.
 
 **This only works because PBIP gave AI something to read.**
 
