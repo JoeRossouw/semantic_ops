@@ -161,6 +161,7 @@ extra:
 # Navigation Structure
 nav:
   - Home: index.md
+  - About: about.md
   - Blog: blog/index.md
   
   - Tools:

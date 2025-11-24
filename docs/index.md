@@ -2,6 +2,10 @@
 
 Welcome to **semantic_ops**. Practical tools, workflows, and AI-assisted development for Power BI.
 
+[**About →**](about.md)
+
+Learn about the work and approach behind these tools
+
 [**Blog →**](blog/)
 
 Technical posts about tools, workflows, and agentic AI for Power BI development

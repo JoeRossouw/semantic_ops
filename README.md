@@ -1,22 +1,35 @@
 # semantic_ops
 
-CI/CD automation, agentic AI tools, and development workflows for Power BI semantic models.
+Documentation site for CI/CD automation, agentic AI tools, and development workflows for Power BI semantic models.
 
-**[📖 View Full Documentation →](https://joerossouw.github.io/semantic_ops/)**
+**[📖 View Documentation Site →](https://joerossouw.github.io/semantic_ops/)**
 
 ---
 
-## What's Here
+## What's This Repo
 
-Python automation scripts for Power BI development:
+This repository hosts the **documentation site** built with MkDocs Material. The site contains:
 
-- **BPA Results Viewer** - Interactive HTML dashboard for Best Practice Analyzer results
-- **Relationship Visualizer** - Network diagrams of semantic model relationships
-- **PBIR Folder Renamer** - Convert GUID folders to readable names
+- **Blog posts** - Technical articles on Power BI automation and AI-assisted development
+- **Tools** - Python automation scripts with documentation
+- **Prompts** - Step-by-step AI prompts for building your own tools
+- **Samples** - Anonymized semantic models and BPA results for demos
 
-Plus tool guides, prompts, and blog posts on AI-assisted Power BI development.
+---
 
-**[→ Browse Tools & Documentation](https://joerossouw.github.io/semantic_ops/)**
+## Repository Structure
+
+```
+semantic_ops/
+├── docs/               # MkDocs documentation site
+│   ├── blog/          # Blog posts
+│   ├── tools/         # Tool documentation
+│   ├── prompts/       # AI prompt guides
+│   └── demos/         # Interactive HTML demos
+├── scripts/           # Python automation scripts
+├── samples/           # Sample data for demos
+└── mkdocs.yml         # Site configuration
+```
 
 ---
 

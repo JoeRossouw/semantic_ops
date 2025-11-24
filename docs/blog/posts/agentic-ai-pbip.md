@@ -17,7 +17,11 @@ tags:
 
 # How I Built a Power BI Tool with AI (Dublin Demo)
 
-Last week at the Dublin Fabric User Group, I showed how Power BI Projects (PBIP) unlocks AI-assisted development in ways .pbix files never could.
+![Dublin Fabric User Group Meetup](../../../assets/images/blog/dublin-fabric-meetup-nov-2025.jpg)
+
+Last week at the Dublin Fabric User Group, I presented on **Power BI CI/CD: From Basic Automation to Agentic AI**. The session covered why CI/CD matters for Power BI (version control, collaboration, quality control), what the technology stack looks like (PBIP, Git, VS Code), and how AI integration is evolving from chat assistants to agentic tools that can interact directly with your semantic models.
+
+The demo showed how Power BI Projects (PBIP) unlocks AI-assisted development in ways .pbix files never could.
 
 [:material-presentation: Download Presentation](https://github.com/JoeRossouw/semantic_ops/raw/main/assets/presentations/Dublin%20Fabric%20User%20Group%2018%20November%20CICD%2C%20Automation%20and%20Agentic%20AI.pdf){ .md-button .md-button--primary }
 
@@ -25,39 +29,100 @@ Last week at the Dublin Fabric User Group, I showed how Power BI Projects (PBIP)
 
 The takeaway: **You cannot afford to wait.**
 
+## Why CI/CD for Power BI?
+
+CI/CD isn't just about deployment. It's an enabler for:
+
+- **Version Control**: Track every change, roll back mistakes, understand model evolution
+- **Collaboration**: Multiple developers working safely on the same models
+- **Visibility & Oversight**: See who changed what and when
+- **Quality Control**: Automated checks before changes go live
+- **Automation**: Metadata extraction, documentation generation, quality analysis
+- **Agentic AI**: AI tools that can read, understand, and interact with your models
+- **Professional Growth**: Learn software engineering practices that make you more valuable
+
+The foundation: **PBIP saves your models as text files**, making everything else possible.
+
 ## Text-Based Models Change Everything
 
-PBIP saves your semantic models as text files: tables, relationships, measures. That metadata locked inside binary .pbix files? Now it's readable Tabular Model Definition Language (TMDL).
+PBIP (Power BI Projects) saves your reports and semantic models as text files:
+- **TMDL (Tabular Model Definition Language)**: Your tables, relationships, measures as readable text
+- **PBIR (Power BI Report)**: Report definitions in JSON format
+
+That metadata locked inside binary .pbix files? Now it's accessible.
 
 This matters because AI can't work with what it can't read. 
 
 .pbix files? AI is blind. Text files? AI becomes your development partner, reading your schema, understanding relationships, building tools to analyze and automate.
 
-This isn't theoretical. I built a tool live during the session.
+### The Basic Setup
+
+Getting started is simpler than you think:
+
+- **Premium or Fabric workspace** (required for PBIP)
+- **VS Code** + **Git** installed locally
+- **GitHub or Azure DevOps** account and repo
+- Clone the repo to a local folder
+- Enable **GitHub Copilot** (free or paid), Claude, or other AI coding assistant
+- Enable **TMDL extension** in Power BI Desktop
+- Save your models as PBIP format
+- Link your Git repo with your Power BI workspace
+
+**Message: Using the native approach is quick and gives you much of the benefit.**
+
+You don't need pipelines or complex automation on day one. Version control + text-based models + AI coding assistant = immediate value.
+
+### Our Production Setup
+
+For reference, here's what we run in production:
+
+- Two long-lived branches (dev/main) + feature branches for changes
+- VS Code + Azure DevOps for Git management
+- CI pipelines to validate and merge changes
+- CD pipelines to deploy with quality gates
+- Best Practice Analyzer (BPA) automated checks on every deployment
+- Metadata extraction and documentation generation
+- Copilot for GitHub for agentic AI assistance
+- Helper scripts in Python and PowerShell
+
+**Future roadmap:** Model Context Protocol (MCP) servers, custom graph database for metadata, automated BPA fixes, and data quality edits.
 
 ## Building Tools Through Conversation
 
-I wanted a good demo for the session: something that showed what's possible with AI and PBIP. Before the meetup, I spent about 10 minutes building the tool with Copilot, refining prompts until I had exactly what I needed. Another 10 minutes to document the process.
+![Joe Rossouw presenting at Dublin Fabric User Group](../../../assets/images/blog/joe-rossouw-presenting.jpg){ align=right width=300 }
+
+The live demo was simple: build a relationship visualizer using AI in real time.
+
+Before the meetup, I spent about 10 minutes building the tool with Github Copilot, refining prompts until I had exactly what I needed. Another 10 minutes to document the process.
 
 I captured both approaches in the [building tools with AI prompts](../../prompts/building-tools-with-ai.md):
 - **Iterative approach**: 6 progressive prompts, each adding features (interactive HTML, multi-model dropdown, table filtering)
 - **One-shot approach**: Single comprehensive prompt for time-constrained demos
 
-During the live session, I used the one-shot prompt (time got a little tight, otherwise I would have done the iterative version). One minute, one request: build a Python script that scans for TMDL files, parses relationships, and generates an interactive HTML visualization with filtering, legends, and CLI arguments.
+During the live demo, I used the one-shot prompt. One minute, one request: build a Python script that scans for TMDL files, parses relationships, and generates an interactive HTML visualization with filtering, legends, and CLI arguments.
 
-Copilot delivered a production-ready relationship visualizer, the kind of thing that normally takes hours or that you skip because the effort isn't worth it.
+Copilot delivered a working relationship visualizer—the kind of thing that normally takes hours or that you skip because the effort isn't worth it.
 
 **This only works because PBIP gave AI something to read.**
 
+[:material-open-in-new: Try the Interactive Demo](../../demos/relationships_viewer.html){ .md-button .md-button--primary target="_blank" }
+
 ## Model Context Protocol: The Next Step
 
-AI integration is evolving fast. First, you ask ChatGPT questions in a browser: helpful but disconnected. Then AI moves into your dev environment: Copilot in VS Code, creating files and modifying your project.
+AI integration is evolving through distinct levels:
 
-Next: **Model Context Protocol (MCP)**. This gives agentic AI structured access to tools: your dev environment, your data, your workflows. Microsoft just released an MCP for Power BI modeling.
+**Level 1 – Assistive Use (Chat-Based)**  
+AI tools like ChatGPT used in a browser. Helpful but disconnected from your workflow.
 
-Instead of just generating code, AI can interact with your semantic models directly: run best practice analysis, apply fixes, generate documentation, all through structured tool access.
+**Level 2 – Agentic Integration**  
+AI runs inside your dev environment (VS Code with Copilot or Claude). Can edit scripts, create files, trigger tasks. This is where most of us are today.
 
-**PBIP is the foundation for this.** 
+**Level 3 – Model Context Protocol (MCP) Servers**  
+AI gains structured access to your tools through the Model Context Protocol. Microsoft has official MCPs now released. Instead of just generating code, AI can interact with your semantic models directly: run best practice analysis, apply fixes, generate documentation, all through structured tool access.
+
+**Level 4 and beyond:** Who knows?
+
+**PBIP is the foundation for all of this.** 
 
 Without text-based models, AI stays stuck answering questions. With PBIP, AI becomes a partner that reads your models, understands them, and uses tools to transform them. Not convenience. Capability.
 
