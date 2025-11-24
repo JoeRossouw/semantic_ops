@@ -21,7 +21,7 @@ Last week at the Dublin Fabric User Group, I presented on **Power BI CI/CD: From
 
 The demo showed how Power BI Projects (PBIP) unlocks AI-assisted development in ways .pbix files never could.
 
-[:material-presentation: Download Presentation](https://github.com/JoeRossouw/semantic_ops/raw/main/assets/presentations/Dublin%20Fabric%20User%20Group%2018%20November%20CICD%2C%20Automation%20and%20Agentic%20AI.pdf){ .md-button .md-button--primary }
+[:material-presentation: Download Presentation](../../assets/presentations/Dublin%20Fabric%20User%20Group%2018%20November%20CICD%2C%20Automation%20and%20Agentic%20AI.pdf){ .md-button .md-button--primary }
 
 <!-- more -->
 
