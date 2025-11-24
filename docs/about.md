@@ -1,6 +1,6 @@
 # About
 
-![Joe Rossouw](../assets/images/joe-rossouw.jpg){ align=right width=200 }
+![Joe Rossouw](assets/images/joe-rossouw.jpg){ align=right width=200 }
 
 I'm Joe Rossouw, based in Dublin leading BI work around enterprise analytics, metadata management, and building CI/CD automation for Power BI.
 
@@ -26,6 +26,5 @@ I write about AI-assisted development—the practical side of using AI to build 
 
 - **GitHub**: [@JoeRossouw](https://github.com/JoeRossouw)
 - **LinkedIn**: [Joe Rossouw](https://linkedin.com/in/joe-rossouw)
-- **Email**: joerossouw [at] gmail.com
 
 Open to questions, collaboration, or talking about Power BI automation and what works in production.

@@ -17,11 +17,11 @@ tags:
 
 # How I Built a Power BI Tool with AI (Dublin Demo)
 
-![Dublin Fabric User Group Meetup](../../../assets/images/blog/dublin-fabric-meetup-nov-2025.jpg)
-
 Last week at the Dublin Fabric User Group, I presented on **Power BI CI/CD: From Basic Automation to Agentic AI**. The session covered why CI/CD matters for Power BI (version control, collaboration, quality control), what the technology stack looks like (PBIP, Git, VS Code), and how AI integration is evolving from chat assistants to agentic tools that can interact directly with your semantic models.
 
 The demo showed how Power BI Projects (PBIP) unlocks AI-assisted development in ways .pbix files never could.
+
+![Dublin Fabric User Group Meetup](../../assets/images/blog/dublin-fabric-meetup-nov-2025.jpg)
 
 [:material-presentation: Download Presentation](https://github.com/JoeRossouw/semantic_ops/raw/main/assets/presentations/Dublin%20Fabric%20User%20Group%2018%20November%20CICD%2C%20Automation%20and%20Agentic%20AI.pdf){ .md-button .md-button--primary }
 
@@ -76,7 +76,7 @@ You don't need pipelines or complex automation on day one. Version control + tex
 
 For reference, here's what we run in production:
 
-- Two long-lived branches (dev/main) + feature branches for changes
+- Two long branches (TEST/PRD) + feature branches ("DEV") for changes
 - VS Code + Azure DevOps for Git management
 - CI pipelines to validate and merge changes
 - CD pipelines to deploy with quality gates
@@ -89,11 +89,13 @@ For reference, here's what we run in production:
 
 ## Building Tools Through Conversation
 
-![Joe Rossouw presenting at Dublin Fabric User Group](../../../assets/images/blog/joe-rossouw-presenting.jpg){ align=right width=300 }
+![Joe Rossouw presenting at Dublin Fabric User Group](../../assets/images/blog/joe-rossouw-presenting.jpg){ align=right width=300 }
 
-The live demo was simple: build a relationship visualizer using AI in real time.
+I started by showing how our repo is set up, how TMDL files and PBIR files are structured. Then I ran the Tabular Editor Best Practice Analyzer locally to identify quality issues. I showed the custom Fixer script we use to automatically fix common problems, then demonstrated how we use agentic prompting with saved prompts to add descriptions to tables and measures.
 
-Before the meetup, I spent about 10 minutes building the tool with Github Copilot, refining prompts until I had exactly what I needed. Another 10 minutes to document the process.
+The live demo came next: build a relationship visualizer using AI in real time.
+
+Before the meetup, I'd spent about 10 minutes building the tool with GitHub Copilot, refining prompts until I had exactly what I needed. Another 10 minutes to document the process.
 
 I captured both approaches in the [building tools with AI prompts](../../prompts/building-tools-with-ai.md):
 - **Iterative approach**: 6 progressive prompts, each adding features (interactive HTML, multi-model dropdown, table filtering)
@@ -111,6 +113,8 @@ Copilot delivered a working relationship visualizer—the kind of thing that nor
 
 AI integration is evolving through distinct levels:
 
+![AI Integration Levels](../../assets/images/blog/ai-integration-levels.png)
+
 **Level 1 – Assistive Use (Chat-Based)**  
 AI tools like ChatGPT used in a browser. Helpful but disconnected from your workflow.
 
@@ -121,6 +125,7 @@ AI runs inside your dev environment (VS Code with Copilot or Claude). Can edit s
 AI gains structured access to your tools through the Model Context Protocol. Microsoft has official MCPs now released. Instead of just generating code, AI can interact with your semantic models directly: run best practice analysis, apply fixes, generate documentation, all through structured tool access.
 
 **Level 4 and beyond:** Who knows?
+
 
 **PBIP is the foundation for all of this.** 
 
