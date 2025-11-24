@@ -79,8 +79,9 @@ You're not learning to code. You're learning to articulate problems. AI handles 
 **Download:** [visualize_all_relationships.py](https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py)
 
 **Full Documentation:** [Relationship Visualizer Tool](../../tool-guides/relationship-viewer-guide.md)  
-**Tutorial:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step prompts)  
-**Live Demo:** [Try the Interactive Viewer](../../demos/relationships_viewer.html) - See 6 sample models in action
+**Tutorial:** [Building Tools with AI](../../tutorials/building-tools-with-ai.md) (step-by-step prompts)
+
+[:material-open-in-new: Launch Interactive Demo](../../demos/relationships_viewer.html){ .md-button .md-button--primary target="_blank" }
 
 ### What Makes This Tool Interesting
 

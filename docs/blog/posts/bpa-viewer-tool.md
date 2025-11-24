@@ -130,8 +130,9 @@ Generated HTML is self-contained (no external dependencies) with JavaScript for:
 
 **Download:** [visualize_bpa_results.py](https://github.com/JoeRossouw/semantic_ops/blob/main/tools/visualize_bpa_results.py)
 
-**Full Documentation:** [BPA Results Viewer Tool](../../tool-guides/bpa-viewer-guide.md) - Detailed setup and usage  
-**Live Demo:** [Try the Interactive Viewer](../../demos/bpa_results_viewer.html) - See multiple model results
+**Full Documentation:** [BPA Results Viewer Tool](../../tool-guides/bpa-viewer-guide.md) - Detailed setup and usage
+
+[:material-open-in-new: Launch Interactive Demo](../../demos/bpa_results_viewer.html){ .md-button .md-button--primary target="_blank" }
 
 ## Usage
 
