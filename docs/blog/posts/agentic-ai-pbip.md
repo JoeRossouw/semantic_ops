@@ -17,7 +17,7 @@ tags:
 
 # How I Built a Power BI Tool with AI (Dublin Demo)
 
-Last week at the Dublin Fabric User Group, I presented on **Power BI CI/CD: From Basic Automation to Agentic AI**. The session covered why CI/CD matters for Power BI (version control, collaboration, quality control), what the technology stack looks like (PBIP, Git, VS Code), and how AI integration is evolving from chat assistants to agentic tools that can interact directly with your semantic models.
+On November 18th, I presented at the Dublin Fabric User Group on **Power BI CI/CD: From Basic Automation to Agentic AI**. The session covered why CI/CD matters for Power BI (version control, collaboration, quality control), what the technology stack looks like (PBIP, Git, VS Code), and how AI integration is evolving from chat assistants to agentic tools that can interact directly with your semantic models.
 
 The demo showed how Power BI Projects (PBIP) unlocks AI-assisted development in ways .pbix files never could.
 

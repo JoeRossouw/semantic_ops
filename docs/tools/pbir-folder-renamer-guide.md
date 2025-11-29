@@ -37,53 +37,67 @@ Now your git diffs and pull requests make sense.
 
 ---
 
-## Quick Start
+## How to Run
 
-**Any platform (Python 3.7+):**
+### Step 1: Download the script
+
+Save `rename_pbir_folders.py` anywhere in your repo (root folder, `scripts/`, `tools/`, wherever works for you).
+
+### Step 2: Open a terminal
+
+In VS Code: **Terminal → New Terminal** (or press `` Ctrl+` ``)
+
+### Step 3: Run it
+
+The command is `python` followed by the path to the script. How you write that path depends on where you saved the script.
+
+**Option A: Drag and drop (easiest)**
+
+1. Type `python ` in your terminal (with a space after)
+2. Drag the script file from Explorer into the terminal
+3. Press Enter
+
+The terminal pastes the full path for you.
+
+**Option B: Navigate to the script first**
+
 ```bash
+cd path/to/folder/containing/script
 python rename_pbir_folders.py
 ```
 
-**macOS/Linux:**
-```bash
-python3 rename_pbir_folders.py
-```
+**Option C: Ask GitHub Copilot**
 
-**Features:**
-- ✅ Interactive mode (prompts for path)
-- ✅ Direct mode (command-line argument)
-- ✅ Colored output
-- ✅ Cross-platform (Windows, macOS, Linux)
-- ✅ No external dependencies
+In VS Code with Copilot, just ask:
+
+> *"Run the rename_pbir_folders.py script"*
+
+Copilot will figure out the correct path and run it for you.
 
 ---
 
-## Usage
+The script auto-detects all `.Report` folders in your repo. If it finds one report, it processes it automatically. If it finds multiple, you get a numbered list to choose from:
 
-### Interactive Mode (Recommended)
+```
+✓ Found 3 reports:
 
-```bash
-python rename_pbir_folders.py
+  [1] reports/Sales.Report
+  [2] reports/Marketing.Report  
+  [3] reports/Finance.Report
+
+  [0] Process ALL reports
+
+Select a report (0 for all, or 1-3):
 ```
 
-The script will prompt you for the path to your `.Report` folder.
+Pick a number, or enter `0` to rename folders in all reports at once.
 
-### Command-Line Mode
+![Running the script and selecting a report](../assets/images/tools/pbir-renamer-select-report.png)
 
-**Windows:**
+### Alternative: Specify a report directly
+
 ```bash
 python rename_pbir_folders.py "path/to/MyReport.Report"
-```
-
-**macOS/Linux:**
-```bash
-python rename_pbir_folders.py "/path/to/MyReport.Report"
-```
-
-### Help
-
-```bash
-python rename_pbir_folders.py --help
 ```
 
 ---
@@ -145,6 +159,8 @@ python3 --version
 ---
 
 ## Output Example
+
+![Terminal output after running the script](../assets/images/tools/pbir-renamer-output.png)
 
 ```
 === Power BI Page & Visual Folder Renamer ===

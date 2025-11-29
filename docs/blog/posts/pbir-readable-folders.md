@@ -16,33 +16,25 @@ tags:
   - Azure DevOps
 ---
 
-# Making PBIR Code Reviews Actually Readable
+# PBIR Is Great, But Your Pull Requests Are Unreadable
 
-Microsoft just announced PBIR becomes the default Power BI report format in January 2026. This enables professional development workflows with source control, CI/CD, and pull requests.
+On November 17, 2025, Microsoft [announced that PBIR becomes the default Power BI report format](https://powerbi.microsoft.com/en-us/blog/pbir-will-become-the-default-power-bi-report-format-get-ready-for-the-transition/) starting January 2026. Reports as text files, source control, CI/CD, pull requests. This is what we've been waiting for.
 
-But there's a problem nobody's talking about: PBIR uses GUID folder names, making code reviews impossible to understand.
+But have you actually tried reviewing PBIR changes in GitHub or Azure DevOps?
 
 <!-- more -->
 
-## Microsoft Just Made PBIR Mandatory
+## The Announcement
 
-On November 17, 2025, Rui Romano (Principal Program Manager at Microsoft) announced that **PBIR will become the default Power BI report format starting January 2026**.
-
-From his blog post:
+From Rui Romano's blog post:
 
 > "The Power BI Enhanced Report Format (PBIR) represents a major leap forward, empowering developers and teams to integrate source control, CI/CD, and collaborative development while enabling AI agents and scripts to programmatically create, edit, and manage Power BI reports in a fully supported way."
 
-This is huge. After GA, PBIR becomes the only supported format. Every report will be text-based, version-controllable, and CI/CD-ready.
+Microsoft is right. PBIR enables professional development workflows for Power BI. Text-based reports mean version control, code reviews, and CI/CD pipelines finally work properly.
 
-Microsoft is right: this enables professional development workflows for Power BI.
-
-**But there's a problem nobody's talking about.**
+But there's a practical problem that gets in the way.
 
 ## The Code Review Problem
-
-PBIR is revolutionary. Reports as text files, finally! Source control, CI/CD, pull requests, the works.
-
-But have you actually tried reviewing PBIR changes in GitHub or Azure DevOps?
 
 Your pull request shows changes to:
 - `definition/pages/50dd411cef39de30a198/page.json`
@@ -57,6 +49,8 @@ That's not a code review workflow. That's friction.
 ## Why This Happens
 
 PBIR saves report structure as folders and JSON files:
+
+![PBIR folders before renaming - GUIDs everywhere](../../assets/images/blog/pbir-folders-before.png)
 
 ```
 MyReport.Report/
@@ -77,6 +71,8 @@ The folder names are auto-generated GUIDs. They don't change when you rename pag
 ## The Solution
 
 Rename the folders to match their actual content.
+
+![PBIR folders after renaming - readable names](../../assets/images/blog/pbir-folders-after.png)
 
 **Before:**
 ```
@@ -126,6 +122,8 @@ python rename_pbir_folders.py "/path/to/MyReport.Report"
 
 ## Impact on Code Reviews
 
+![Readable diffs in pull requests](../../assets/images/blog/pbir-diff-readable.png)
+
 **Before (Meaningless Diffs):**
 
 Reviewer sees:
@@ -168,18 +166,9 @@ You can integrate this into your CI/CD pipeline to run automatically on PR merge
 
 ## The Bigger Picture
 
-Microsoft's vision for PBIR is spot-on:
-- Version control (Git): Track every change to your reports
-- Code reviews (PRs): Collaborative development with proper approval workflows
-- CI/CD pipelines: Automated deployment and testing
-- AI integration: Programmatic report creation and management
-- Team collaboration: Multiple developers working on the same report
+Microsoft's vision for PBIR is spot-on. Version control, code reviews, CI/CD pipelines, AI integration, team collaboration. Power BI finally gets professional development workflows.
 
-These are professional development workflows. Power BI needed this.
-
-**But workflows are only useful if your team can actually understand what changed.**
-
-GUID folder names break the code review workflow. This script fixes it.
+But workflows only matter if your team can understand what changed. GUID folder names get in the way. This script fixes that.
 
 
 ## Try It Yourself
@@ -194,11 +183,13 @@ GUID folder names break the code review workflow. This script fixes it.
 ---
 
 **Resources:**
-- [Rui Romano's Announcement](https://powerbi.microsoft.com/en-us/blog/pbir-will-become-the-default-power-bi-report-format-get-ready-for-the-transition/) (November 17, 2025)
+
+- [Microsoft Announcement: PBIR Becomes Default Format](https://powerbi.microsoft.com/en-us/blog/pbir-will-become-the-default-power-bi-report-format-get-ready-for-the-transition/) (Rui Romano, November 2025)
 - [PBIR Folder Renamer Tool](../../tools/pbir-folder-renamer-guide.md)
 - [Microsoft PBIR Documentation](https://learn.microsoft.com/power-bi/developer/projects/projects-report)
 
 **Related:**
+
 - [BPA Results Viewer](bpa-viewer-tool.md)
 - [Building Tools with AI](agentic-ai-pbip.md)
 

@@ -6,9 +6,21 @@ Makes PBIR code reviews actually readable by replacing GUID folder names with me
   Pages:   50dd411cef39de30a198 → Sales_Overview_50dd411cef39de30a198
   Visuals: 2402e6f6ec7ad97e9443 → clusteredBarChart_2402e6f6ec7ad97e9443
 
+Setup:
+  1. Place this script anywhere in your repo (root, scripts/, tools/, etc.)
+  2. Run from the script's directory:
+       cd path/to/script
+       python rename_pbir_folders.py
+  
+  Or run with full path from anywhere (example):
+       python C:/MyRepo/scripts/rename_pbir_folders.py
+       python scripts/rename_pbir_folders.py
+
+2  Tip: Type "python " then drag this file into the terminal to paste its full path!
+
 Usage:
-  python rename_pbir_folders.py                                    # Interactive mode
-  python rename_pbir_folders.py /path/to/MyReport.Report          # Direct mode
+  python rename_pbir_folders.py                                    # Auto-detect .Report folders
+  python rename_pbir_folders.py /path/to/MyReport.Report          # Process specific report
   python rename_pbir_folders.py --help                             # Show help
 
 Requirements: Python 3.7+ (no external dependencies)
@@ -279,6 +291,101 @@ def interactive_mode() -> Optional[Path]:
         return report_path
 
 
+def find_report_folders(search_root: Path, max_depth: int = 5) -> list:
+    """
+    Auto-detect .Report folders relative to search root
+    
+    Args:
+        search_root: Directory to start searching from
+        max_depth: Maximum directory depth to search
+        
+    Returns:
+        List of Path objects to .Report folders found
+    """
+    report_folders = []
+    
+    def search_dir(path: Path, depth: int):
+        if depth > max_depth:
+            return
+        try:
+            for item in path.iterdir():
+                if item.is_dir():
+                    if item.name.lower().endswith('.report'):
+                        # Verify it's a valid PBIR report (has definition/pages)
+                        if (item / "definition" / "pages").exists():
+                            report_folders.append(item)
+                    else:
+                        search_dir(item, depth + 1)
+        except PermissionError:
+            pass
+    
+    search_dir(search_root, 0)
+    return sorted(report_folders, key=lambda p: str(p).lower())
+
+
+def auto_detect_mode(script_location: Path) -> Optional[Path]:
+    """
+    Auto-detect .Report folders relative to where the script is located
+    
+    Args:
+        script_location: Path to this script file
+        
+    Returns:
+        Path to selected .Report folder, list of paths, or None
+    """
+    # Search from script's parent directory (repo root if script is at root or in scripts/)
+    search_root = script_location.parent
+    
+    # If script is in a subfolder like 'scripts/', search from repo root
+    if search_root.name.lower() in ('scripts', 'tools', 'utils', 'bin'):
+        search_root = search_root.parent
+    
+    print("\033[96m=== Power BI Page & Visual Folder Renamer ===\033[0m")
+    print(f"\033[90mSearching for .Report folders in: {search_root}\033[0m")
+    print()
+    
+    report_folders = find_report_folders(search_root)
+    
+    if not report_folders:
+        print("\033[93m⚠ No .Report folders found in this repository.\033[0m")
+        print("\033[90mTip: Place this script in a repo containing Power BI .Report folders.\033[0m")
+        return None
+    
+    if len(report_folders) == 1:
+        # Single report found - use it automatically
+        print(f"\033[92m✓ Found 1 report: {report_folders[0].name}\033[0m")
+        return report_folders[0]
+    
+    # Multiple reports found - let user choose
+    print(f"\033[92m✓ Found {len(report_folders)} reports:\033[0m")
+    print()
+    for i, folder in enumerate(report_folders, 1):
+        # Show relative path from search root
+        try:
+            rel_path = folder.relative_to(search_root)
+        except ValueError:
+            rel_path = folder
+        print(f"  [{i}] {rel_path}")
+    
+    print()
+    print("  [0] Process ALL reports")
+    print()
+    
+    while True:
+        try:
+            choice = input("Select a report (0 for all, or 1-{0}): ".format(len(report_folders))).strip()
+            if not choice:
+                continue
+            choice_num = int(choice)
+            if choice_num == 0:
+                return report_folders  # Return list for batch processing
+            if 1 <= choice_num <= len(report_folders):
+                return report_folders[choice_num - 1]
+            print("\033[91mInvalid selection. Please try again.\033[0m")
+        except ValueError:
+            print("\033[91mPlease enter a number.\033[0m")
+
+
 def main():
     """Main execution"""
     parser = argparse.ArgumentParser(
@@ -286,8 +393,8 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  %(prog)s
-  %(prog)s /path/to/MyReport.Report
+  %(prog)s                                    # Auto-detect reports in repo
+  %(prog)s /path/to/MyReport.Report          # Process specific report
   %(prog)s "C:\\MyProject\\reports\\MyReport.Report"
         """
     )
@@ -295,7 +402,7 @@ Examples:
     parser.add_argument(
         'report_directory',
         nargs='?',
-        help='Path to the .Report folder'
+        help='Path to the .Report folder (auto-detects if not specified)'
     )
     
     args = parser.parse_args()
@@ -303,38 +410,49 @@ Examples:
     try:
         # Determine report directory
         if args.report_directory:
-            report_directory = Path(args.report_directory)
+            report_directories = [Path(args.report_directory)]
         else:
-            # Interactive mode
-            report_directory = interactive_mode()
-            if not report_directory:
+            # Auto-detect mode - find reports relative to script location
+            script_path = Path(__file__).resolve()
+            result = auto_detect_mode(script_path)
+            if not result:
                 return 1
+            # Handle single or multiple reports
+            report_directories = result if isinstance(result, list) else [result]
         
-        # Validate the provided path
-        if not report_directory.exists():
-            print(f"✗ Report directory does not exist: {report_directory}")
-            return 1
+        total_pages = 0
+        total_visuals = 0
         
-        if not str(report_directory).lower().endswith(".report"):
-            print("✗ Report directory must end with '.Report'")
-            return 1
-        
-        # Execute the renaming
-        print()
-        print("\033[96mStarting page folder renaming process...\033[0m")
-        print(f"Report: {report_directory}")
-        print()
-        
-        success, pages_processed, visuals_processed = rename_page_folders(report_directory)
-        
-        if success:
+        for report_directory in report_directories:
+            # Validate the provided path
+            if not report_directory.exists():
+                print(f"✗ Report directory does not exist: {report_directory}")
+                continue
+            
+            if not str(report_directory).lower().endswith(".report"):
+                print("✗ Report directory must end with '.Report'")
+                continue
+            
+            # Execute the renaming
             print()
-            print("\033[92mProcessing complete!\033[0m")
-            return 0
-        else:
+            print("\033[96mStarting page folder renaming process...\033[0m")
+            print(f"Report: {report_directory}")
             print()
-            print("\033[93mNo changes made.\033[0m")
-            return 0
+            
+            success, pages_processed, visuals_processed = rename_page_folders(report_directory)
+            total_pages += pages_processed
+            total_visuals += visuals_processed
+        
+        if len(report_directories) > 1:
+            print()
+            print("\033[96m=== Overall Summary ===\033[0m")
+            print(f"  Reports processed: {len(report_directories)}")
+            print(f"  Total pages: {total_pages}")
+            print(f"  Total visuals: {total_visuals}")
+        
+        print()
+        print("\033[92mProcessing complete!\033[0m")
+        return 0
             
     except KeyboardInterrupt:
         print()
