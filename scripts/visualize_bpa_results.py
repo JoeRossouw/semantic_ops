@@ -1,9 +1,19 @@
 """
 Generate interactive HTML visualization for BPA test results from TRX files
 
-Usage:
-    python visualize_bpa_results.py --input <path_to_trx_files> --output <output_html_path>
-    python visualize_bpa_results.py  # Scans current directory recursively
+How to run:
+  1. Place this script anywhere in your repo (root, scripts/, tools/, etc.)
+  2. Open a terminal and run:
+  
+       python visualize_bpa_results.py                    # Scans current directory for .trx files
+       python visualize_bpa_results.py --input ./results  # Scan specific folder
+
+  Quick tip: Type "python " then drag this file into your terminal to paste the full path.
+
+  Using VS Code with Copilot? Just ask:
+       "Run the visualize_bpa_results.py script on my TRX files"
+
+Requirements: Python 3.7+ (no external dependencies)
 """
 import sys
 import argparse

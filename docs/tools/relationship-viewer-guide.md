@@ -74,47 +74,68 @@ This tool scans for Power BI semantic models in TMDL format, parses relationship
 - **Dependencies**: None (uses Python standard library only)
 - **Input Format**: Power BI semantic models in TMDL format (`.SemanticModel` folders)
 
-## Installation
+## How to Run
 
-No installation required. Download the script using the button above, or:
+### Step 1: Download the script
 
+Save `visualize_all_relationships.py` anywhere in your repo (root folder, `scripts/`, `tools/`, wherever works for you).
+
+Or download via command line:
 ```bash
 curl -O https://raw.githubusercontent.com/JoeRossouw/semantic_ops/main/scripts/visualize_all_relationships.py
 ```
 
-## Usage
+### Step 2: Open a terminal
 
-### Basic Usage
+In VS Code: **Terminal → New Terminal** (or press `` Ctrl+` ``)
 
-**Just run it** - the script automatically scans your entire repository:
+### Step 3: Run it
+
+The command is `python` followed by the path to the script. How you write that path depends on where you saved the script.
+
+**Option A: Drag and drop (easiest)**
+
+1. Type `python ` in your terminal (with a space after)
+2. Drag the script file from Explorer into the terminal
+3. Press Enter
+
+The terminal pastes the full path for you.
+
+**Option B: Navigate to the script first**
 
 ```bash
+cd path/to/folder/containing/script
 python visualize_all_relationships.py
 ```
 
-This will:
-1. Recursively search from the current directory for all `.SemanticModel` folders
+**Option C: Ask GitHub Copilot**
+
+In VS Code with Copilot, just ask:
+
+> *"Run the visualize_all_relationships.py script"*
+
+Copilot will figure out the correct path and run it for you.
+
+---
+
+The script will:
+
+1. Recursively search for all `.SemanticModel` folders
 2. Parse all `relationships.tmdl` files found
 3. Generate `relationships_viewer.html` in the current directory
-4. Automatically open the HTML file in your default browser
+4. Open the HTML file in your default browser
 
 ### Advanced Options
 
-**Skip opening browser:**
 ```bash
+# Skip opening browser
 python visualize_all_relationships.py --no-browser
-```
 
-**Search a specific directory only:**
-```bash
+# Search a specific directory only
 python visualize_all_relationships.py --search-path ./my_models
-```
 
-**Combine options:**
-```bash
-python visualize_all_relationships.py \
-  --search-path ./my_models \
-  --no-browser
+# Combine options
+python visualize_all_relationships.py --search-path ./my_models --no-browser
 ```
 
 ### Command-Line Options

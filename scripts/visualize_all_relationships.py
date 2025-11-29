@@ -1,12 +1,22 @@
 """
 Generate interactive HTML visualization for all Power BI Semantic Models
 
-Scans the entire repository for .SemanticModel folders, parses TMDL relationship files,
+Scans the repository for .SemanticModel folders, parses TMDL relationship files,
 and creates an interactive HTML viewer with relationship diagrams.
 
-Usage:
-    python visualize_all_relationships.py                    # Scans repo, opens in browser
-    python visualize_all_relationships.py --no-browser       # Skip browser
+How to run:
+  1. Place this script anywhere in your repo (root, scripts/, tools/, etc.)
+  2. Open a terminal and run:
+  
+       python visualize_all_relationships.py              # Scans repo for .SemanticModel folders
+       python visualize_all_relationships.py --no-browser # Skip opening browser
+
+  Quick tip: Type "python " then drag this file into your terminal to paste the full path.
+
+  Using VS Code with Copilot? Just ask:
+       "Run the visualize_all_relationships.py script"
+
+Requirements: Python 3.7+ (no external dependencies)
 """
 import re
 import json
