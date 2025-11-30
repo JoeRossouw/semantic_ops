@@ -1,5 +1,4 @@
 relationship 0df345fd-9199-2c88-0d46-1ca4dd475b98
-	crossFilteringBehavior: bothDirections
 	fromColumn: pbi_storagetablecolumnsegments.TableColumn_Link
 	toColumn: pbi_storagetablecolumns.TableColumn_Link
 
@@ -27,7 +26,6 @@ relationship 44f91b39-544d-3e52-50d9-156f14ba66cd
 	toColumn: pbi_table_summary.UniqueTableDatasetID
 
 relationship ac81b1ef-9449-f81c-f3e7-57a5e8f66311
-	crossFilteringBehavior: bothDirections
 	fromColumn: pbi_storagetablecolumns.Table_Link
 	toColumn: pbi_storagetables.Table_Link
 

@@ -1,15 +1,12 @@
-relationship f5657b3a-d318-4507-9e58-58783da8b30f
-	crossFilteringBehavior: bothDirections
+relationship f5657b3a-d318-4507-9e58-58783da8b30
 	fromColumn: 'Fact Daily Refresh'.objectId
 	toColumn: 'Dim TableDataFlow'.objectId
 
 relationship c6d6082e-f5e7-4358-b1f6-0796d4849b44
-	crossFilteringBehavior: bothDirections
 	fromColumn: 'Fact Daily Refresh'.workspaceId
 	toColumn: 'Dim Workspace'.workspaceId
 
 relationship 258a3e26-65ba-41a7-aa14-6560ec711942
-	crossFilteringBehavior: bothDirections
 	fromColumn: 'Fact Daily Refresh'.DateID
 	toColumn: 'Dim Date'.Date
 
